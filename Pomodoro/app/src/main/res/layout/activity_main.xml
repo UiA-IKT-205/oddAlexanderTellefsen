@@ -17,14 +17,52 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/startCountdownButton"
+        android:id="@+id/startCountdown30Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/startButtonText"
+        android:text="@string/startButton30Text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countDownView" />
+        app:layout_constraintTop_toBottomOf="@+id/countDownView"
+        app:layout_constraintVertical_bias="0.11" />
+
+    <Button
+        android:id="@+id/startCountdown60Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/startButton60Text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startCountdown30Button"
+        app:layout_constraintVertical_bias="0.099" />
+
+    <Button
+        android:id="@+id/startCountdown90Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/startButton90Text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startCountdown60Button"
+        app:layout_constraintVertical_bias="0.169" />
+
+    <Button
+        android:id="@+id/startCountdown120Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/startButton120Text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startCountdown90Button"
+        app:layout_constraintVertical_bias="0.283" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
