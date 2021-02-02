@@ -11,58 +11,119 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/default_time_display"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/countDownTimeSb"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toLeftOf="@id/pauseView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.79"
+        android:gravity="bottom"/>
 
-    <Button
-        android:id="@+id/startCountdown30Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/startButton30Text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+    <SeekBar
+        android:id="@+id/countDownTimeSb"
+        android:layout_width="241dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintBottom_toTopOf="@id/pauseTimeSb"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/countDownView"
-        app:layout_constraintVertical_bias="0.11" />
+        android:min="@string/minCountdownTime"
+        android:max="@string/maxCountdownTIme"
+        android:progress="45"
+        />
+
+    <SeekBar
+        android:id="@+id/pauseTimeSb"
+        android:layout_width="240dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintBottom_toTopOf="@id/startCountDownBt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countDownTimeSb"
+        android:max="@string/maxPauseTime"
+        android:min="@string/minPauseTime"
+        android:progress="15"
+        />
 
     <Button
-        android:id="@+id/startCountdown60Button"
+        android:id="@+id/startCountDownBt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/startButton60Text"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:onClick="startCountDown"
+        android:text="@string/startButtonText"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintRight_toLeftOf="@+id/resetBt"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startCountdown30Button"
-        app:layout_constraintVertical_bias="0.099" />
+        app:layout_constraintTop_toBottomOf="@+id/numberOfRepsEt" />
+
+    <TextView
+        android:id="@+id/valueSeekbarCountdownTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_time_display"
+        app:layout_constraintBottom_toBottomOf="@+id/countDownTimeSb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/countDownTimeSb"
+        app:layout_constraintTop_toTopOf="@+id/countDownTimeSb" />
+
+    <TextView
+        android:id="@+id/valueSeekbarPauseTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_time_display"
+        app:layout_constraintBottom_toBottomOf="@+id/pauseTimeSb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pauseTimeSb"
+        app:layout_constraintTop_toTopOf="@+id/pauseTimeSb" />
+
+    <EditText
+        android:id="@+id/numberOfRepsEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:ems="5"
+        android:hint="@string/hintRepsEt"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:text="@string/defaultReps"
+        app:layout_constraintBottom_toTopOf="@+id/startCountDownBt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/valueSeekbarPauseTv" />
+
+    <TextView
+        android:id="@+id/pauseView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_time_display"
+        android:textColor="@color/teal_700"
+        app:layout_constraintBottom_toBottomOf="@+id/countDownView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/countDownView"
+        android:gravity="bottom"/>
+
+    <TextView
+        android:id="@+id/cyclesTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/countDownTimeSb"
+        app:layout_constraintEnd_toEndOf="@+id/countDownView"
+        app:layout_constraintStart_toStartOf="@+id/countDownView"
+        app:layout_constraintTop_toBottomOf="@+id/countDownView" />
 
     <Button
-        android:id="@+id/startCountdown90Button"
+        android:id="@+id/resetBt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/startButton90Text"
+        android:layout_marginEnd="32dp"
+        android:text="@string/Reset"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startCountdown60Button"
-        app:layout_constraintVertical_bias="0.169" />
-
-    <Button
-        android:id="@+id/startCountdown120Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/startButton120Text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startCountdown90Button"
-        app:layout_constraintVertical_bias="0.283" />
+        app:layout_constraintLeft_toRightOf="@id/startCountDownBt"
+        app:layout_constraintTop_toBottomOf="@+id/numberOfRepsEt" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
