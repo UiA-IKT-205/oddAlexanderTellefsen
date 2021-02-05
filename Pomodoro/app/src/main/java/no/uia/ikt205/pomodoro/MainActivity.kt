@@ -4,21 +4,28 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import no.uia.ikt205.pomodoro.util.millisecondsToDescriptiveTime
 
 class MainActivity : AppCompatActivity() {
-
+    val minToMsFactor = 60000L
+    var cycleCount = 0
+    val defaultCountdown = 45
+    val defaultPause = 15
     lateinit var timer:CountDownTimer
-    lateinit var startButton30:Button
-    lateinit var startButton60:Button
-    lateinit var startButton90:Button
-    lateinit var startButton120:Button
-    lateinit var coutdownDisplay:TextView
+    lateinit var startCountDownBt:Button
+    lateinit var countDownDisplay:TextView
+    lateinit var valueSeekBarCountDown: TextView
+    lateinit var valueSeekBarPause: TextView
+    lateinit var countDownSeekBar: SeekBar
+    lateinit var pauseTimeSeekBar: SeekBar
+    lateinit var pauseDisplay:TextView
+    lateinit var cyclesDisplay:TextView
+    lateinit var numberOfRepsEditView:EditText
+    lateinit var resetBt:Button
 
-    var timeToCountDownInMs = 5000L
+    var timeToCountDownInMs = defaultCountdown*minToMsFactor
+    var timeToPauseInMs = defaultPause*minToMsFactor
     val timeTicks = 1000L
 
 
@@ -26,33 +33,67 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-       startButton30 = findViewById<Button>(R.id.startCountdown30Button)
-       startButton30.setOnClickListener(){
-           timeToCountDownInMs = 1800000
-           startCountDown(it)
+        countDownSeekBar = findViewById<SeekBar>(R.id.countDownTimeSb)
+        pauseTimeSeekBar = findViewById<SeekBar>(R.id.pauseTimeSb)
+        valueSeekBarCountDown = findViewById(R.id.valueSeekbarCountdownTv)
+        valueSeekBarPause = findViewById(R.id.valueSeekbarPauseTv)
+        countDownDisplay = findViewById<TextView>(R.id.countDownView)
+        pauseDisplay = findViewById(R.id.pauseView)
+        cyclesDisplay = findViewById(R.id.cyclesTv)
+        numberOfRepsEditView = findViewById(R.id.numberOfRepsEt)
+        countDownDisplay.text = millisecondsToDescriptiveTime(countDownSeekBar.progress * minToMsFactor.toLong())
+        pauseDisplay.text = millisecondsToDescriptiveTime(pauseTimeSeekBar.progress * minToMsFactor.toLong())
+        valueSeekBarCountDown.text = millisecondsToDescriptiveTime(countDownSeekBar.progress * minToMsFactor.toLong())
+        valueSeekBarPause.text = millisecondsToDescriptiveTime(pauseTimeSeekBar.progress * minToMsFactor.toLong())
+
+       countDownSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+           override fun onProgressChanged(seekBar: SeekBar, progress: Int,
+                                          fromUser: Boolean) {
+               timeToCountDownInMs = (minToMsFactor * progress).toLong()
+               valueSeekBarCountDown.text = millisecondsToDescriptiveTime(timeToCountDownInMs)
+           }
+
+           override fun onStartTrackingTouch(seekBar: SeekBar) {
+
+           }
+
+           override fun onStopTrackingTouch(seekBar: SeekBar) {
+
+           }
+       })
+
+        pauseTimeSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar, progress: Int,
+                                           fromUser: Boolean) {
+                timeToPauseInMs = (minToMsFactor * progress).toLong()
+                valueSeekBarPause.text = millisecondsToDescriptiveTime(timeToPauseInMs)
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar) {
+
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar) {
+
+            }
+        })
+
+       startCountDownBt = findViewById<Button>(R.id.startCountDownBt)
+       startCountDownBt.setOnClickListener(){
+                        startCountDown(it)
+                        updatePauseDisplay(timeToPauseInMs)
+                        numberOfRepsEditView.setEnabled(false)
+                        startCountDownBt.setEnabled(false)
+                        countDownSeekBar.setEnabled(false)
+                        pauseTimeSeekBar.setEnabled(false)
+                        updateCycles(it)
+
        }
 
-        startButton60 = findViewById<Button>(R.id.startCountdown60Button)
-        startButton60.setOnClickListener(){
-            timeToCountDownInMs = 3600000
-            startCountDown(it)
+        resetBt = findViewById(R.id.resetBt)
+        resetBt.setOnClickListener(){
+            resetTimerAndButton()
         }
-
-        startButton90 = findViewById<Button>(R.id.startCountdown90Button)
-        startButton90.setOnClickListener(){
-            timeToCountDownInMs = 5400000
-            startCountDown(it)
-        }
-
-        startButton120 = findViewById<Button>(R.id.startCountdown120Button)
-        startButton120.setOnClickListener(){
-            timeToCountDownInMs = 7200000
-            startCountDown(it)
-        }
-
-
-       coutdownDisplay = findViewById<TextView>(R.id.countDownView)
-
     }
 
     fun startCountDown(v: View){
@@ -62,7 +103,7 @@ class MainActivity : AppCompatActivity() {
 
         timer = object : CountDownTimer(timeToCountDownInMs,timeTicks) {
             override fun onFinish() {
-                Toast.makeText(this@MainActivity,"Arbeidsøkt er ferdig", Toast.LENGTH_SHORT).show()
+                startPause(v)
             }
             override fun onTick(millisUntilFinished: Long) {
                updateCountDownDisplay(millisUntilFinished)
@@ -71,8 +112,56 @@ class MainActivity : AppCompatActivity() {
         timer.start()
     }
 
+    fun startPause(v: View) {
+        timer = object : CountDownTimer(timeToPauseInMs,timeTicks) {
+            override fun onFinish() {
+                updateCycles(v)
+
+            }
+            override fun onTick(millisUntilFinished: Long) {
+                updatePauseDisplay(millisUntilFinished)
+            }
+        }
+        timer.start()
+
+    }
+
     fun updateCountDownDisplay(timeInMs:Long){
-        coutdownDisplay.text = millisecondsToDescriptiveTime(timeInMs)
+        countDownDisplay.text = millisecondsToDescriptiveTime(timeInMs)
+    }
+
+    fun updatePauseDisplay(timeInMs:Long){
+        pauseDisplay.text = millisecondsToDescriptiveTime(timeInMs)
+    }
+
+    private fun updateCycles(v: View) {
+        if(cycleCount < numberOfRepsEditView.text.toString().toInt()) {
+            cycleCount += 1
+            cyclesDisplay.text = (String.format("Cycle %s of %s", cycleCount, numberOfRepsEditView.text.toString().toInt()))
+            startCountDown(v)
+        }
+        else {
+            Toast.makeText(this, R.string.complete, Toast.LENGTH_SHORT).show()
+            resetTimerAndButton()
+        }
+    }
+
+    fun resetTimerAndButton(){
+        if(this::timer.isInitialized)
+            timer.cancel()
+        cycleCount=0
+        timeToCountDownInMs = defaultCountdown*minToMsFactor
+        timeToPauseInMs = defaultPause*minToMsFactor
+        startCountDownBt.setEnabled(true)
+        countDownSeekBar.setEnabled(true)
+        pauseTimeSeekBar.setEnabled(true)
+        numberOfRepsEditView.setEnabled(true)
+        updateCountDownDisplay(timeToCountDownInMs)
+        updatePauseDisplay(timeToPauseInMs)
+        countDownSeekBar.progress = defaultCountdown
+        pauseTimeSeekBar.progress = defaultPause
+        numberOfRepsEditView.setText("1")
+
     }
 
 }

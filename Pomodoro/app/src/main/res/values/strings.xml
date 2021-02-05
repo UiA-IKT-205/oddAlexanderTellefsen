@@ -1,8 +1,13 @@
 <resources>
     <string name="app_name">Pomodoro</string>
     <string name="default_time_display">00:00:00</string>
-    <string name="startButton30Text">Start from 30 min</string>
-    <string name="startButton60Text">Start from 60 min</string>
-    <string name="startButton90Text">Start from 90 min</string>
-    <string name="startButton120Text">Start from 120 min</string>
+    <string name="hintRepsEt">Repetitions</string>
+    <string name="startButtonText">Start</string>
+    <string name="defaultReps">1</string>
+    <string name="complete">Countdown complete</string>
+    <string name="Reset">Reset</string>
+    <string name="maxPauseTime">30</string>
+    <string name="minPauseTime">0</string>
+    <string name="minCountdownTime">1</string>
+    <string name="maxCountdownTIme">300</string>
 </resources>
