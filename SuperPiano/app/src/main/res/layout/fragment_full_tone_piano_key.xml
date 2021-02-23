@@ -4,18 +4,21 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".FullTonePianoKeyFragment">
+    tools:context=".FullTonePianoKeyFragment"
+    android:paddingStart="1dp"
+    android:paddingEnd="0dp">
 
   <Button
-      android:id="@+id/fullToneKey"
-      android:layout_margin="0dp"
-      android:layout_width="60dp"
-      android:layout_height="match_parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintBottom_toBottomOf="parent"
+      android:id="@+id/fullToneKeyBtn"
+      android:layout_width="50dp"
+      android:layout_height="250dp"
       android:backgroundTint="@color/white"
+      android:background="@drawable/pianokeyshape"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintTop_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"/>
 
-      />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
