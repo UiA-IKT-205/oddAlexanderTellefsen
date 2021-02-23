@@ -19,7 +19,7 @@ class PianoLayout : Fragment() {
     private var _binding:FragmentPianoBinding? = null
     private val binding get() = _binding!!
     private val fullTones = listOf("C", "D", "E", "F", "G", "A", "B","C2", "D2", "E2", "F2", "G2")
-    private val halfTones = listOf("C#","D#", "Dummy", "F#","G#","A#", "Dummy", "C2#","D2#","F2#","G2#")
+    private val halfTones = listOf("C#","D#", "Dummy", "F#","G#","A#", "Dummy", "C2#","D2#", "Dummy", "F2#")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,9 +66,10 @@ class PianoLayout : Fragment() {
             if (it.equals("Dummy"))
             {
                 //Add Code that adds fragment without button or removes/disables button from existing fragment
-                
+                halfTonePianoKey.disableButton = true
             }
-                ft.add(view.HalfTonePianoKey.id, halfTonePianoKey, "note_$it")
+            
+            ft.add(view.HalfTonePianoKey.id, halfTonePianoKey, "note_$it")
         }
         ft.commit()
         return view
