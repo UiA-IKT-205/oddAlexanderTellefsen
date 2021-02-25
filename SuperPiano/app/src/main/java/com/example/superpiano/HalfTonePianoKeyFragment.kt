@@ -6,23 +6,28 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import com.example.superpiano.databinding.FragmentFullTonePianoKeyBinding
-import kotlinx.android.synthetic.main.fragment_full_tone_piano_key.view.*
+import android.widget.*
+import androidx.core.view.isVisible
+import com.example.superpiano.databinding.FragmentHalfTonePianoKeyBinding
+import kotlinx.android.synthetic.main.fragment_half_tone_piano_key.view.*
 
 
-class FullTonePianoKeyFragment : Fragment() {
+class HalfTonePianoKeyFragment : Fragment() {
 
-    private var _binding:FragmentFullTonePianoKeyBinding? = null
+    private var _binding:FragmentHalfTonePianoKeyBinding? = null
     private val binding get() = _binding!!
     private lateinit var note:String
+    var disableButton = false
 
     var onKeyDown:((note:String) -> Unit)? = null
     var onKeyUp:((note:String) -> Unit)? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             note = it.getString("NOTE") ?: "?"
+
         }
     }
 
@@ -31,14 +36,17 @@ class FullTonePianoKeyFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentFullTonePianoKeyBinding.inflate(layoutInflater)
+        _binding = FragmentHalfTonePianoKeyBinding.inflate(layoutInflater)
         val view = binding.root
 
-        view.fullToneKeyBtn.setOnTouchListener(object: View.OnTouchListener{
+        if(disableButton)
+            view.halfToneKeyBtn.visibility = View.INVISIBLE
+        else
+            view.halfToneKeyBtn.setOnTouchListener(object: View.OnTouchListener{
             override fun onTouch(v: View?, event: MotionEvent?): Boolean{
                 when(event?.action){
-                    MotionEvent.ACTION_DOWN -> this@FullTonePianoKeyFragment.onKeyDown?.invoke(note)
-                    MotionEvent.ACTION_UP -> this@FullTonePianoKeyFragment.onKeyUp?.invoke(note)
+                    MotionEvent.ACTION_DOWN -> this@HalfTonePianoKeyFragment.onKeyDown?.invoke(note)
+                    MotionEvent.ACTION_UP -> this@HalfTonePianoKeyFragment.onKeyUp?.invoke(note)
                 }
                 return true
             }
@@ -48,10 +56,11 @@ class FullTonePianoKeyFragment : Fragment() {
 
     companion object {
         fun newInstance(note:String) =
-                FullTonePianoKeyFragment().apply {
+                HalfTonePianoKeyFragment().apply {
                     arguments = Bundle().apply {
                         putString("NOTE", note)
                     }
                 }
     }
+
 }
