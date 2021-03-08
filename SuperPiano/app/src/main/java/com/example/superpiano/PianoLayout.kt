@@ -1,22 +1,19 @@
 package com.example.superpiano
 
-import android.graphics.Color.RED
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
-import android.provider.CalendarContract
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
+import android.widget.Toast
 import com.example.superpiano.data.Notes
 import com.example.superpiano.databinding.FragmentPianoBinding
-import kotlinx.android.synthetic.main.fragment_half_tone_piano_key.*
-import kotlinx.android.synthetic.main.fragment_half_tone_piano_key.view.*
 import kotlinx.android.synthetic.main.fragment_piano.view.*
 import kotlinx.android.synthetic.main.fragment_piano.view.HalfTonePianoKey
 import java.io.File
 import java.io.FileOutputStream
-
 
 class PianoLayout : Fragment() {
     private var _binding:FragmentPianoBinding? = null
@@ -24,6 +21,7 @@ class PianoLayout : Fragment() {
     private val fullTones = listOf("C", "D", "E", "F", "G", "A", "B","C2", "D2", "E2", "F2", "G2")
     private val halfTones = listOf("C#","D#", "Dummy", "F#","G#","A#", "Dummy", "C2#","D2#", "Dummy", "F2#")
     private var score:MutableList<Notes> = mutableListOf<Notes>()
+    var startTune:Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,15 +42,22 @@ class PianoLayout : Fragment() {
         fullTones.forEach{
             val fullTonePianoKey = FullTonePianoKeyFragment.newInstance(it)
             var startPlay:Long = 0
+            var durationKey: Long
+
+            //Set beginning time for tune
+            if(score.count()==0)
+                {
+                    startTune = System.currentTimeMillis()
+                }
 
             fullTonePianoKey.onKeyDown = {note ->
-                startPlay = System.nanoTime()
+                startPlay = System.currentTimeMillis()-startTune
                     println("Piano key down$it")
                 }
 
             fullTonePianoKey.onKeyUp = { note ->
-                    var endPlay = System.nanoTime()
-                    val note = Notes(it, startPlay, endPlay)
+                    durationKey = System.currentTimeMillis()-startTune-startPlay
+                    val note = Notes(it, startPlay, durationKey)
                     score.add(note)
                     println("Piano key Up$note")
                 }
@@ -62,15 +67,16 @@ class PianoLayout : Fragment() {
         halfTones.forEach{
             val halfTonePianoKey = HalfTonePianoKeyFragment.newInstance(it)
             var startPlay:Long = 0
+            var durationKey:Long
 
             halfTonePianoKey.onKeyDown = {note ->
-                    startPlay = System.nanoTime()
+                    startPlay = System.currentTimeMillis()-startTune
                     println("Piano key down$note")
                 }
 
             halfTonePianoKey.onKeyUp = {note ->
-                    var endPlay = System.nanoTime()
-                    val note = Notes(it, startPlay, endPlay)
+                    durationKey = System.currentTimeMillis()-startTune-startPlay
+                    val note = Notes(it, startPlay, durationKey)
                     score.add(note)
                     println("Piano key Up$note")
 
@@ -89,21 +95,73 @@ class PianoLayout : Fragment() {
        view.saveTonesBt.setOnClickListener {
             var fileName = view.fileEditText.text.toString()
             val path = this.activity?.getExternalFilesDir(null)
-            if (score.count() > 0 && fileName.isNotEmpty() && path != null){
-                fileName = "$fileName.mus"
+
+           if (fileName.isEmpty())
+           {
+               Toast.makeText(requireActivity(), "Please enter file name (Default is tune.mu)", Toast.LENGTH_LONG).show()
+               fileName="tune.mu"
+           }
+           else
+               fileName = "$fileName.mus"
+
+           var file = File(path, fileName)
+
+
+           if(path == null)
+               Toast.makeText(requireActivity(), "Illegal folder path..", Toast.LENGTH_LONG).show()
+
+           else if(score.count() == 0)
+               Toast.makeText(requireActivity(), "No tune made..", Toast.LENGTH_LONG).show()
+
+           else if(file.exists()){
+               handleFileExists(file, path)}
+
+           else {
                 FileOutputStream(File(path,fileName),true).bufferedWriter().use { writer ->
 
                     score.forEach {
                         writer.write("${it.toString()}\n")
                     }
                 }
-            } else {
-                /// TODO: What to do?
             }
         }
 
         return view
     }
 
+    private fun handleFileExists(file: File, path: File) {
+        val builder: AlertDialog.Builder = AlertDialog.Builder(requireActivity())
+        builder.setTitle("Warning")
+        builder.setMessage("File already exists")
 
+        builder.setNeutralButton("Append tune", DialogInterface.OnClickListener{dialog, which ->
+            FileOutputStream(File(path,file.name),true).bufferedWriter().use { writer ->
+                score.forEach {
+                    writer.write("${it.toString()}\n")
+                }
+             dialog.dismiss()
+            }
+        })
+
+
+        builder.setNegativeButton("Overwrite") { dialog, which ->
+            var tune: String = ""
+            score.forEach {
+                tune = tune + ("${it.toString()}\n")
+                file.writeText("${it.toString()}\n")
+            }
+            file.writeText(tune)
+            dialog.dismiss()
+
+        }
+
+        builder.setPositiveButton("Cancel") { dialog, which ->
+            dialog.dismiss()
+
+        }
+
+
+        val alertDialog: AlertDialog = builder.create()
+        alertDialog.show()
+    }
 }

@@ -1,10 +1,10 @@
 package com.example.superpiano.data
 
-data class Notes(val value:String, val start:Long, val end:Long){
+data class Notes(val value:String, val start:Long, val duration:Long){
 
 
     override fun toString(): String {
-        return "$value,$start,$end"
+        return "$value,$start,$duration"
     }
 }
 
