@@ -23,16 +23,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         auth = Firebase.auth
         signInAnonymously()
-
         piano = supportFragmentManager.findFragmentById(binding.piano.id) as PianoLayout
-
         piano.onSave = {
             this.uploadFile(it)
         }
-
     }
 
+
     private fun uploadFile(file: Uri){
+
         Log.d(TAG, "Upload file $file")
         val ref = FirebaseStorage.getInstance().reference.child("tunes/${file.lastPathSegment}")
         var uploadTask = ref.putFile(file)
