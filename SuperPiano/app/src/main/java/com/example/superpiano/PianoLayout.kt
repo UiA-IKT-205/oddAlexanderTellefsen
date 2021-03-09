@@ -2,12 +2,14 @@ package com.example.superpiano
 
 import android.app.AlertDialog
 import android.content.DialogInterface
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.net.toUri
 import com.example.superpiano.data.Notes
 import com.example.superpiano.databinding.FragmentPianoBinding
 import kotlinx.android.synthetic.main.fragment_piano.view.*
@@ -16,6 +18,9 @@ import java.io.File
 import java.io.FileOutputStream
 
 class PianoLayout : Fragment() {
+
+    var onSave:((file: Uri) -> Unit)? = null
+
     private var _binding:FragmentPianoBinding? = null
     private val binding get() = _binding!!
     private val fullTones = listOf("C", "D", "E", "F", "G", "A", "B","C2", "D2", "E2", "F2", "G2")
@@ -122,6 +127,8 @@ class PianoLayout : Fragment() {
                     score.forEach {
                         writer.write("${it.toString()}\n")
                     }
+                    this.onSave?.invoke((file.toUri()))
+                    Toast.makeText(requireActivity(), "File saved..", Toast.LENGTH_LONG).show()
                 }
             }
         }
@@ -140,6 +147,8 @@ class PianoLayout : Fragment() {
                     writer.write("${it.toString()}\n")
                 }
              dialog.dismiss()
+             this.onSave?.invoke((file.toUri()))
+             Toast.makeText(requireActivity(), "File saved..", Toast.LENGTH_LONG).show()
             }
         })
 
@@ -151,7 +160,9 @@ class PianoLayout : Fragment() {
                 file.writeText("${it.toString()}\n")
             }
             file.writeText(tune)
+            this.onSave?.invoke((file.toUri()))
             dialog.dismiss()
+            Toast.makeText(requireActivity(), "File saved..", Toast.LENGTH_LONG).show()
 
         }
 
