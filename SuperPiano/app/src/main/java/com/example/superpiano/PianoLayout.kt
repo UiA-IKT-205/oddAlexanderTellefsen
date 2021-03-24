@@ -131,8 +131,7 @@ class PianoLayout : Fragment() {
                     Toast.makeText(requireActivity(), "File saved..", Toast.LENGTH_LONG).show()
                 }
             }
-        }
-
+       }
         return view
     }
 
@@ -152,7 +151,6 @@ class PianoLayout : Fragment() {
             }
         })
 
-
         builder.setNegativeButton("Overwrite") { dialog, which ->
             var tune: String = ""
             score.forEach {
@@ -170,8 +168,6 @@ class PianoLayout : Fragment() {
             dialog.dismiss()
 
         }
-
-
         val alertDialog: AlertDialog = builder.create()
         alertDialog.show()
     }
