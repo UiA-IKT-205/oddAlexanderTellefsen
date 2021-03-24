@@ -4,14 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    >
-
+    tools:context=".DetailsActivity">
 
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +18,7 @@
         >
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/cardListing"
+            android:id="@+id/detailsCardListing"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
@@ -38,6 +36,5 @@
         android:contentDescription="@string/fab_content_desc"
         app:srcCompat="@android:drawable/ic_menu_add"
 
-    />
-
+        />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
