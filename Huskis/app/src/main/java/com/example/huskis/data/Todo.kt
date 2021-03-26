@@ -2,9 +2,10 @@ package com.example.huskis.data
 
 import java.io.Serializable
 
-data class Todo (var title:String, val itemList:MutableList<item>) : Serializable{
+data class Todo (var title:String="", val itemList:MutableList<item>) : Serializable{
+    var id = this.hashCode();
 
-    data class item(var itemName:String, var completed:Boolean){
+    data class item(var itemName:String="", var completed:Boolean){
 
 
             public fun flipStatus(){

@@ -8,22 +8,17 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.huskis.data.Todo
-import com.example.huskis.data.ListRecyclerAdapter
 import com.example.huskis.databinding.ActivityMainBinding
-import no.uia.ikt205.mybooks.books.ListDepositoryManager
 
 
-private val TAG:String = "Huskis:MainActivity"
+private val TAG: String = "Huskis:MainActivity"
 
-class ListHolder{
+class ListHolder {
 
-    companion object{
-        var PickedTodo:Todo? = null
+    companion object {
+        var PickedTodo: Todo? = null
     }
-
-
 }
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,44 +37,47 @@ class MainActivity : AppCompatActivity() {
         }
         ListDepositoryManager.instance.load("s", this)
 
+        //Header
+        binding.cardListing.addItemDecoration(HeaderDecoration(150, 50))
+
 
         //Floating action button
         binding.fabAdd.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             val inflater = layoutInflater
-            builder.setTitle("Enter name of list")
+            builder.setTitle(getString(R.string.input))
             val dialogLayout = inflater.inflate(R.layout.alert_dialog_input, null)
-            val inputText  = dialogLayout.findViewById<EditText>(R.id.inputEditText)
+            val inputText = dialogLayout.findViewById<EditText>(R.id.inputEditText)
             builder.setView(dialogLayout)
-            builder.setPositiveButton("OK") { dialogInterface, i -> addItem(Todo(inputText.text.toString(), mutableListOf()))}
+            builder.setNeutralButton(getString(R.string.cancel)) { dialog, which -> dialog.dismiss() }
+            builder.setPositiveButton(getString(R.string.ok)) { dialogInterface, i -> addList(Todo(inputText.text.toString(), mutableListOf())) }
+
             builder.show()
-
         }
+    }
 
-        }
-
-    private fun addItem(item: Todo) {
+    private fun addList(item: Todo) {
         ListDepositoryManager.instance.addTodo(item)
 
-
     }
 
-    private fun onListClicked(todo: Todo):Unit{
+    override fun onResume() {
+        super.onResume()
+        binding.cardListing.adapter?.notifyDataSetChanged()
+    }
+
+    private fun onListClicked(todo: Todo): Unit {
         ListHolder.PickedTodo = todo
-        Log.e(TAG, "Pushed card : >${todo.toString()}")
-        //println("Content : %s", )
+        Log.e(TAG, "Pushed card : >${todo.id}")
         val intent = Intent(this, DetailsActivity::class.java)
-        //intent.putExtra("POS", position as Serializable)
         startActivity(intent)
-
     }
 
-    private fun deleteItem(position:Int){
+    private fun deleteItem(position: Int) {
         ListDepositoryManager.instance.deleteTodo(position)
 
     }
 
-
- }
+}
 
 

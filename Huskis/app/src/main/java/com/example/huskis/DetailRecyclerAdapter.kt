@@ -1,17 +1,17 @@
-package com.example.huskis.data
+package com.example.huskis
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.CompoundButton
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
+import com.example.huskis.data.Todo
 import com.example.huskis.databinding.DetailslayoutBinding
-import no.uia.ikt205.mybooks.books.ListDepositoryManager
 
-class DetailRecyclerAdapter(private var item: MutableList<Todo.item>):RecyclerView.Adapter<DetailRecyclerAdapter.Viewholder>() {
+class DetailRecyclerAdapter(private var item: MutableList<Todo.item>) : RecyclerView.Adapter<DetailRecyclerAdapter.Viewholder>() {
 
 
-    inner class Viewholder(val binding: DetailslayoutBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class Viewholder(val binding: DetailslayoutBinding) : RecyclerView.ViewHolder(binding.root) {
 
 
         fun bind(item: Todo.item) {
@@ -19,14 +19,11 @@ class DetailRecyclerAdapter(private var item: MutableList<Todo.item>):RecyclerVi
 
             binding.detailsItemNameTv.text = item.itemName
             binding.itemCheckbox.isChecked = item.completed
-            binding.itemCheckbox.setOnCheckedChangeListener { compoundButton: CompoundButton, b: Boolean ->
-                item.flipStatus()
-                }
-            binding.itemDelete.setOnClickListener{deleteItem(position)}
-            //binding.deleteBtn.setOnClickListener {deleteItem(position)}
+            binding.itemCheckbox.setOnCheckedChangeListener { compoundButton: CompoundButton, b: Boolean -> item.flipStatus() }
+            binding.itemDelete.setOnClickListener { deleteItem(position) }
+
         }
     }
-
 
     override fun getItemCount(): Int = item.size
 
@@ -34,32 +31,24 @@ class DetailRecyclerAdapter(private var item: MutableList<Todo.item>):RecyclerVi
         holder.bind(item[position])
 
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Viewholder {
         return Viewholder(DetailslayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false))
 
     }
 
-
-    public fun updateCollection(newList: List<Todo.item>){
+    fun updateCollection(newList: List<Todo.item>) {
         item = newList as MutableList<Todo.item>
         notifyDataSetChanged()
 
     }
 
-    public fun deleteItem(position:Int){
+    fun deleteItem(position: Int) {
         lateinit var dialog: AlertDialog
         item.removeAt(position)
-        //ListDepositoryManager.instance.deleteItem(position)
         updateCollection(item)
 
     }
-
-    private fun flipStatus(position: Int) {
-        item[position].flipStatus()
-        updateCollection(item)
-
-    }
-
 
 }
 

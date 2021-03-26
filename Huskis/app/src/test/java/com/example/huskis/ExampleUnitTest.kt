@@ -1,5 +1,6 @@
 package com.example.huskis
 
+import com.example.huskis.data.Todo
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -13,5 +14,24 @@ class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
+    }
+
+    @Test
+    fun dataIsCorrectFormat(){
+        assertEquals("Todo(title=Butikken, itemList=[item(itemName=Eple, completed=true), item(itemName=Pære, completed=true), item(itemName=Øl, completed=true)])",
+                Todo("Butikken", mutableListOf(Todo.item("Eple", true), Todo.item("Pære", true), Todo.item("Øl", true))).toString())
+    }
+
+    @Test
+    fun sizeIsCorrect(){
+
+        assertEquals(2, Todo("Butikken", mutableListOf(Todo.item("Eple", true), Todo.item("Pære", true))).getSize())
+
+    }
+
+    @Test
+    fun numberOfCompletedIsCorrect(){
+        assertEquals(2, Todo("Butikken", mutableListOf(Todo.item("Eple", true), Todo.item("Pære", true),Todo.item("Banan", false))).getCompleted())
+
     }
 }

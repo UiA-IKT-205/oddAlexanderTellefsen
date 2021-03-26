@@ -1,21 +1,22 @@
-package com.example.huskis.data
+package com.example.huskis
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.example.huskis.databinding.ListlayoutBinding
-import no.uia.ikt205.mybooks.books.ListDepositoryManager
+import com.example.huskis.ListDepositoryManager
+import com.example.huskis.data.Todo
 import kotlin.collections.List
 
-private val TAG:String = "Huskis:MainActivity"
+private val TAG: String = "Huskis:MainActivity"
 
 
 class ListRecyclerAdapter(private var todo: List<Todo>,
-                          private val onListClicked:(todo:Todo)-> Unit)
-                        : RecyclerView.Adapter<ListRecyclerAdapter.Viewholder>() {
+                          private val onListClicked: (todo: Todo) -> Unit)
+    : RecyclerView.Adapter<ListRecyclerAdapter.Viewholder>() {
 
-
-    inner class Viewholder(val binding:ListlayoutBinding):RecyclerView.ViewHolder(binding.root) {
+    inner class Viewholder(val binding: ListlayoutBinding) : RecyclerView.ViewHolder(binding.root) {
 
 
         fun bind(todo: Todo) {
@@ -25,38 +26,37 @@ class ListRecyclerAdapter(private var todo: List<Todo>,
             binding.pbProgress.max = todo.getSize()
             binding.pbProgress.setProgress(todo.getCompleted(), true)
             binding.pbProgress.max = todo.getSize()
-            binding.deleteBtn.setOnClickListener {deleteItem(position)}
+            binding.deleteBtn.setOnClickListener { deleteItem(position) }
         }
     }
+
     override fun getItemCount(): Int = todo.size
 
     override fun onBindViewHolder(holder: Viewholder, position: Int) {
         holder.bind(todo[position])
         holder.itemView.setOnClickListener {
             onListClicked(
-                todo[position]
+                    todo[position]
             )
         }
     }
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Viewholder {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Viewholder {
         return Viewholder(ListlayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false))
 
     }
 
-
-    public fun updateCollection(newList: List<Todo>){
+    fun updateCollection(newList: List<Todo>) {
         todo = newList as MutableList<Todo>
         notifyDataSetChanged()
 
     }
 
-    public fun deleteItem(position:Int){
-        lateinit var dialog:AlertDialog
+    fun deleteItem(position: Int) {
+        lateinit var dialog: AlertDialog
         ListDepositoryManager.instance.deleteTodo(position)
         updateCollection(todo)
 
     }
-
-
 }
 
