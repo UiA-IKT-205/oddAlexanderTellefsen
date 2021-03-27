@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.example.huskis.databinding.ListlayoutBinding
-import com.example.huskis.ListDepositoryManager
 import com.example.huskis.data.Todo
 import kotlin.collections.List
 
@@ -26,7 +25,7 @@ class ListRecyclerAdapter(private var todo: List<Todo>,
             binding.pbProgress.max = todo.getSize()
             binding.pbProgress.setProgress(todo.getCompleted(), true)
             binding.pbProgress.max = todo.getSize()
-            binding.deleteBtn.setOnClickListener { deleteItem(position) }
+            binding.deleteBtn.setOnClickListener { deleteList(position) }
         }
     }
 
@@ -52,7 +51,7 @@ class ListRecyclerAdapter(private var todo: List<Todo>,
 
     }
 
-    fun deleteItem(position: Int) {
+    fun deleteList(position: Int) {
         lateinit var dialog: AlertDialog
         ListDepositoryManager.instance.deleteTodo(position)
         updateCollection(todo)

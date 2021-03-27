@@ -35,6 +35,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                android:layout_gravity="start"
                 />
 
             <ProgressBar
@@ -45,6 +46,7 @@
                 android:indeterminate="false"
                 android:maxWidth="200dp"
                 android:minWidth="70dp"
+                android:layout_gravity="start"
                 />
         </LinearLayout>
 
