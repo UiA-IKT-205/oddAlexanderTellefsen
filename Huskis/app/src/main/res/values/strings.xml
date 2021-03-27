@@ -3,6 +3,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fab_content_desc">Add an item</string>
-    <string name="input_hint">Enter name of list</string>
+    <string name="input_hint">E.g Shopping list</string>
     <string name="deleteBtn">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="input">Enter name of list</string>
+    <string name="ok">Ok</string>
 </resources>
