@@ -5,11 +5,12 @@ import android.view.ViewGroup
 import android.widget.CompoundButton
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
+import com.example.huskis.ListDepositoryManager.Companion.instance
 import com.example.huskis.data.Todo
 import com.example.huskis.databinding.DetailslayoutBinding
 
-class DetailRecyclerAdapter(private var item: MutableList<Todo.item>) : RecyclerView.Adapter<DetailRecyclerAdapter.Viewholder>() {
-
+class DetailRecyclerAdapter(private var item: MutableList<Todo.item>, title:String) : RecyclerView.Adapter<DetailRecyclerAdapter.Viewholder>() {
+    var title:String = title
 
     inner class Viewholder(val binding: DetailslayoutBinding) : RecyclerView.ViewHolder(binding.root) {
 
@@ -19,8 +20,8 @@ class DetailRecyclerAdapter(private var item: MutableList<Todo.item>) : Recycler
 
             binding.detailsItemNameTv.text = item.itemName
             binding.itemCheckbox.isChecked = item.completed
-            binding.itemCheckbox.setOnCheckedChangeListener { compoundButton: CompoundButton, b: Boolean -> item.flipStatus() }
-            binding.itemDelete.setOnClickListener { deleteItem(position) }
+            binding.itemCheckbox.setOnCheckedChangeListener { compoundButton: CompoundButton, b: Boolean -> flipStatus(item) }
+            binding.itemDelete.setOnClickListener { deleteItem(item) }
 
         }
     }
@@ -43,10 +44,18 @@ class DetailRecyclerAdapter(private var item: MutableList<Todo.item>) : Recycler
 
     }
 
-    fun deleteItem(position: Int) {
-        lateinit var dialog: AlertDialog
-        item.removeAt(position)
-        updateCollection(item)
+    fun deleteItem(dItem: Todo.item) {
+        //Deleting entry from local mutableList
+        item.removeAt(item.indexOf(dItem))
+        updateCollection(this.item)
+
+        ListDepositoryManager.instance.deleteItem(title, dItem.itemName)
+
+    }
+
+    fun flipStatus(item: Todo.item){
+
+        ListDepositoryManager.instance.flipStatus(title, item, item.completed)
 
     }
 

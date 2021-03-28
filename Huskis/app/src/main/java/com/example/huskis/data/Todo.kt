@@ -8,7 +8,7 @@ data class Todo (var title:String="", val itemList:MutableList<item>) : Serializ
     data class item(var itemName:String="", var completed:Boolean){
 
 
-            public fun flipStatus(){
+            fun flipStatus(){
                 completed=!completed
             }
     }

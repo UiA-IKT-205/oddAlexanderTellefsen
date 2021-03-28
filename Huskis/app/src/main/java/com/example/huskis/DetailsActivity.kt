@@ -20,7 +20,7 @@ class DetailsActivity : AppCompatActivity() {
 
         todo = ListHolder.PickedTodo!!
         binding.detailsCardListing.layoutManager = LinearLayoutManager(this)
-        binding.detailsCardListing.adapter = DetailRecyclerAdapter(todo.itemList)
+        binding.detailsCardListing.adapter = DetailRecyclerAdapter(todo.itemList, todo.title)
 
         //Header
         binding.detailsCardListing.addItemDecoration(HeaderDecoration(150, 50))
@@ -52,7 +52,9 @@ class DetailsActivity : AppCompatActivity() {
     }
 
     private fun addItem(item: Todo.item) {
-        todo.itemList.add(item)
+
+        ListDepositoryManager.instance.addItem(todo, item)
+        //todo.itemList.add(item)
         binding.detailsCardListing.adapter?.notifyDataSetChanged()
 
     }

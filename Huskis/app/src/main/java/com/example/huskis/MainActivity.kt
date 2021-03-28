@@ -9,14 +9,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.huskis.data.Todo
 import com.example.huskis.databinding.ActivityMainBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 
 private val TAG: String = "Huskis:MainActivity"
-
 class ListHolder {
 
     companion object {
         var PickedTodo: Todo? = null
+        var index:Int? = null
     }
 }
 
@@ -39,7 +42,6 @@ class MainActivity : AppCompatActivity() {
 
         //Header
         binding.cardListing.addItemDecoration(HeaderDecoration(150, 50))
-
 
         //Floating action button
         binding.fabAdd.setOnClickListener {
@@ -68,6 +70,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun onListClicked(todo: Todo): Unit {
         ListHolder.PickedTodo = todo
+        ListHolder.index =
         Log.e(TAG, "Pushed card : >${todo.id}")
         val intent = Intent(this, DetailsActivity::class.java)
         startActivity(intent)
