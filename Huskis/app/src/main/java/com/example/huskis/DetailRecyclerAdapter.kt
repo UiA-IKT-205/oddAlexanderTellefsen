@@ -9,10 +9,15 @@ import com.example.huskis.ListDepositoryManager.Companion.instance
 import com.example.huskis.data.Todo
 import com.example.huskis.databinding.DetailslayoutBinding
 
-class DetailRecyclerAdapter(private var item: MutableList<Todo.item>, title:String) : RecyclerView.Adapter<DetailRecyclerAdapter.Viewholder>() {
-    var title:String = title
+class DetailRecyclerAdapter(
+    private var item: MutableList<Todo.item>,
+    title: String,
+    private val updateHeader: () -> Unit
+) : RecyclerView.Adapter<DetailRecyclerAdapter.Viewholder>() {
+    var title: String = title
 
-    inner class Viewholder(val binding: DetailslayoutBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class Viewholder(val binding: DetailslayoutBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
 
         fun bind(item: Todo.item) {
@@ -20,8 +25,14 @@ class DetailRecyclerAdapter(private var item: MutableList<Todo.item>, title:Stri
 
             binding.detailsItemNameTv.text = item.itemName
             binding.itemCheckbox.isChecked = item.completed
-            binding.itemCheckbox.setOnCheckedChangeListener { compoundButton: CompoundButton, b: Boolean -> flipStatus(item) }
-            binding.itemDelete.setOnClickListener { deleteItem(item) }
+            binding.itemCheckbox.setOnCheckedChangeListener { compoundButton: CompoundButton, b: Boolean ->
+                flipStatus(item)
+                updateHeader()
+            }
+            binding.itemDelete.setOnClickListener {
+                deleteItem(item)
+                updateHeader()
+            }
 
         }
     }
@@ -34,12 +45,19 @@ class DetailRecyclerAdapter(private var item: MutableList<Todo.item>, title:Stri
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Viewholder {
-        return Viewholder(DetailslayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return Viewholder(
+            DetailslayoutBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
 
     }
 
     fun updateCollection(newList: List<Todo.item>) {
         item = newList as MutableList<Todo.item>
+        updateHeader()
         notifyDataSetChanged()
 
     }
@@ -48,13 +66,11 @@ class DetailRecyclerAdapter(private var item: MutableList<Todo.item>, title:Stri
         //Deleting entry from local mutableList
         item.removeAt(item.indexOf(dItem))
         updateCollection(this.item)
-
         ListDepositoryManager.instance.deleteItem(title, dItem.itemName)
 
     }
 
-    fun flipStatus(item: Todo.item){
-
+    fun flipStatus(item: Todo.item) {
         ListDepositoryManager.instance.flipStatus(title, item, item.completed)
 
     }

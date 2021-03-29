@@ -8,4 +8,11 @@
     <string name="cancel">Cancel</string>
     <string name="input">Enter name of list</string>
     <string name="ok">Ok</string>
+    <string name="loggedIn">Logged user</string>
+    <string name="headerText">Huskis</string>
+    <string name="DefaultText">Default text</string>
+    <string name="inputItem">Enter name of item</string>
+    <string name="inputItemExample">E.g Buy milk</string>
+    <string name="editHeaderText">Enter new list name</string>
+    <string name="editHeaderHint">E.g Shopping list</string>
 </resources>

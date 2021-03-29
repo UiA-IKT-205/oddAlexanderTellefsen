@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "1029496202796",
+    "firebase_url": "https://huskis-79721-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "huskis-79721",
     "storage_bucket": "huskis-79721.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "1029496202796-11ga7jfopjrs58mu1v1ac8qj6pev4g6g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.huskis",
+            "certificate_hash": "cbf58c0d8a4457b3a183c938c94afcb445a805f1"
+          }
+        },
         {
           "client_id": "1029496202796-mdkj0jrvtqpnenfhdcdh7ep5205avc0l.apps.googleusercontent.com",
           "client_type": 3
