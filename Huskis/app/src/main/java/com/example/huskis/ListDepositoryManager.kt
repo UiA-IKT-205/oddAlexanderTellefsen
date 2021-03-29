@@ -1,29 +1,40 @@
 package com.example.huskis
 
 import android.content.Context
+import android.content.Intent
+import android.util.Log
+import androidx.core.app.ActivityCompat.startActivityForResult
 import com.example.huskis.data.Todo
-import com.google.firebase.database.*
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-
-private val URL: String = "https://huskis-79721-default-rtdb.europe-west1.firebasedatabase.app/"
-private val USER: String = "Anonymous"
 
 
+private var URL: String = "https://huskis-79721-default-rtdb.europe-west1.firebasedatabase.app/"
+private var USER: String = "Anonymous"
+private var EMAIL: String = "Anonymous@email.com"
+private var DATABASE : String = "FIREBASE DATABASE:"
 class ListDepositoryManager {
 
 
     private lateinit var listCollection: MutableList<Todo>
     val database = Firebase.database(URL)
     val myRef = database.getReference("Todo-List")
-    auth
-
     var onList: ((List<Todo>) -> Unit)? = null
 
 
-    fun load(url: String, context: Context) {
+    fun load(user:String, email:String, url: String, context: Context) {
+        USER = user
+        EMAIL = email
+        URL = url
         listCollection = mutableListOf()
         readFromRealtimeDatabase()
 
@@ -104,7 +115,6 @@ class ListDepositoryManager {
                                 currentItem.child("itemList").getValue() as HashMap<String, Any>
                             for ((k, v) in itemMap) {
                                 v as HashMap<String, Boolean>
-                                println(v.get("completed"))
                                 tmp.add(
                                     Todo.item(
                                         v.get("itemName").toString(),
@@ -120,7 +130,7 @@ class ListDepositoryManager {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                Log.w(DATABASE, "Google sign in failed")
             }
         }
         )

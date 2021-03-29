@@ -11,9 +11,10 @@ import kotlin.collections.List
 private val TAG: String = "Huskis:MainActivity"
 
 
-class ListRecyclerAdapter(private var todo: List<Todo>,
-                          private val onListClicked: (todo: Todo) -> Unit)
-    : RecyclerView.Adapter<ListRecyclerAdapter.Viewholder>() {
+class ListRecyclerAdapter(
+    private var todo: List<Todo>,
+    private val onListClicked: (todo: Todo) -> Unit
+) : RecyclerView.Adapter<ListRecyclerAdapter.Viewholder>() {
 
     inner class Viewholder(val binding: ListlayoutBinding) : RecyclerView.ViewHolder(binding.root) {
 
@@ -35,13 +36,19 @@ class ListRecyclerAdapter(private var todo: List<Todo>,
         holder.bind(todo[position])
         holder.itemView.setOnClickListener {
             onListClicked(
-                    todo[position]
+                todo[position]
             )
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Viewholder {
-        return Viewholder(ListlayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return Viewholder(
+            ListlayoutBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
 
     }
 
