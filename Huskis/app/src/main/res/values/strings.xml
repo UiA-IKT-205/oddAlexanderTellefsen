@@ -8,7 +8,7 @@
     <string name="cancel">Cancel</string>
     <string name="input">Enter name of list</string>
     <string name="ok">Ok</string>
-    <string name="loggedIn">Logged user</string>
+    <string name="loggedIn">Logged user\n</string>
     <string name="headerText">Huskis</string>
     <string name="DefaultText">Default text</string>
     <string name="inputItem">Enter name of item</string>
@@ -17,4 +17,7 @@
     <string name="editHeaderHint">E.g Shopping list</string>
     <string name="noData">No lists to show. Add one!</string>
     <string name="noItemData">Forgot something?</string>
+    <string name="loginFailedToast">Login to google cloud service failed</string>
+    <string name="noUserLogged">Logged out\n</string>
+    <string name="logoutFailedToast">An error has occured while signing out</string>
 </resources>
