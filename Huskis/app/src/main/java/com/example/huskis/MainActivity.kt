@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -96,7 +97,21 @@ class MainActivity : AppCompatActivity() {
     private fun switchAccount() {
         //Signing out of firebase and google client
         auth.signOut()
-        mGoogleSignInClient.signOut();
+        mGoogleSignInClient.signOut().addOnCompleteListener(this){ task ->
+            if (task.isSuccessful) {
+                //Sign out success
+                Log.d(TAG, "Sign out : Success")
+                binding.loginStatus.text = getString(R.string.noUserLogged)
+
+            } else {
+                // Sign out failed
+                Toast.makeText(applicationContext,getString(R.string.logoutFailedToast), Toast.LENGTH_SHORT).show()
+                Log.w(TAG, "Sign out : Failure", task.exception)
+
+            }
+
+
+        };
 
         //Initializin new sign-in
         signInGoogle()
@@ -127,7 +142,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d(TAG, "firebaseAuthWithGoogle:" + account.id)
                 firebaseAuthWithGoogle(account.idToken!!)
             } catch (e: ApiException) {
-                // Google Sign In failed, update UI appropriately
+                // Google Sign In failed
                 Log.w(TAG, "Google sign in failed", e)
             }
         }
@@ -148,6 +163,7 @@ class MainActivity : AppCompatActivity() {
 
                 } else {
                     // Sign in failed
+                    Toast.makeText(applicationContext,getString(R.string.loginFailedToast), Toast.LENGTH_SHORT).show()
                     Log.w(TAG, "Sign In With Credential : Failure", task.exception)
 
                 }
