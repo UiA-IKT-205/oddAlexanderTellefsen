@@ -3,9 +3,7 @@ package com.example.huskis
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.CompoundButton
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
-import com.example.huskis.ListDepositoryManager.Companion.instance
 import com.example.huskis.data.Todo
 import com.example.huskis.databinding.DetailslayoutBinding
 
@@ -14,6 +12,7 @@ class DetailRecyclerAdapter(
     title: String,
     private val updateHeader: () -> Unit
 ) : RecyclerView.Adapter<DetailRecyclerAdapter.Viewholder>() {
+
     var title: String = title
 
     inner class Viewholder(val binding: DetailslayoutBinding) :
@@ -21,8 +20,6 @@ class DetailRecyclerAdapter(
 
 
         fun bind(item: Todo.item) {
-            var position: Int = getAdapterPosition()
-
             binding.detailsItemNameTv.text = item.itemName
             binding.itemCheckbox.isChecked = item.completed
             binding.itemCheckbox.setOnCheckedChangeListener { compoundButton: CompoundButton, b: Boolean ->
@@ -33,7 +30,6 @@ class DetailRecyclerAdapter(
                 deleteItem(item)
                 updateHeader()
             }
-
         }
     }
 
@@ -52,7 +48,6 @@ class DetailRecyclerAdapter(
                 false
             )
         )
-
     }
 
     fun updateCollection(newList: List<Todo.item>) {
@@ -60,20 +55,22 @@ class DetailRecyclerAdapter(
         updateHeader()
         notifyDataSetChanged()
 
+        //Syncing changes with online database/cloud by uploading new sublist to the list
+        ListDepositoryManager.instance.updateDatabase(title)
+
     }
 
     fun deleteItem(dItem: Todo.item) {
         //Deleting entry from local mutableList
         item.removeAt(item.indexOf(dItem))
         updateCollection(this.item)
-        ListDepositoryManager.instance.deleteItem(title, dItem.itemName)
+
 
     }
 
     fun flipStatus(item: Todo.item) {
-        ListDepositoryManager.instance.flipStatus(title, item, item.completed)
-
+        item.flipStatus()
+        updateCollection(this.item)
     }
 
 }
-

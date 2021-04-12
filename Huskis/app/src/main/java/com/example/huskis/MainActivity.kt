@@ -3,9 +3,12 @@ package com.example.huskis
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.huskis.data.Todo
 import com.example.huskis.databinding.ActivityMainBinding
@@ -16,15 +19,19 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_main.*
 
-private var USER_ID:String = "Anonymous"
-private var DISPLAY_NAME:String = "Anon"
-private var EMAIL:String = "anonymous@email.com"
+private var USER_ID: String = "Anonymous"
+private var DISPLAY_NAME: String = "Anon"
+private var EMAIL: String = "anonymous@email.com"
 private val TAG: String = "Huskis:MainActivity"
+private val firebaseURL = "https://huskis-79721-default-rtdb.europe-west1.firebasedatabase.app/"
+
 class ListHolder {
 
     companion object {
         var PickedTodo: Todo? = null
+
     }
 }
 
@@ -41,12 +48,17 @@ class MainActivity : AppCompatActivity() {
         binding.cardListing.layoutManager = LinearLayoutManager(this)
         binding.cardListing.adapter = ListRecyclerAdapter(emptyList<Todo>(), this::onListClicked)
 
+
         //Signing in with google user, using firebase with realtime database
         signInGoogle()
+
         ListDepositoryManager.instance.onList = {
             (binding.cardListing.adapter as ListRecyclerAdapter).updateCollection(it)
+            if (it.isEmpty())
+                binding.noDataText.visibility = (View.VISIBLE)
+            else
+                binding.noDataText.visibility = (View.INVISIBLE)
         }
-
 
         //Header list spacing
         binding.cardListing.addItemDecoration(HeaderDecoration(50, 50))
@@ -60,12 +72,14 @@ class MainActivity : AppCompatActivity() {
             val inputText = dialogLayout.findViewById<EditText>(R.id.inputEditText)
             builder.setView(dialogLayout)
             builder.setNeutralButton(getString(R.string.cancel)) { dialog, which -> dialog.dismiss() }
-            builder.setPositiveButton(getString(R.string.ok)) { dialogInterface, i -> addList(
-                Todo(
-                    inputText.text.toString(),
-                    mutableListOf()
+            builder.setPositiveButton(getString(R.string.ok)) { dialogInterface, i ->
+                addList(
+                    Todo(
+                        inputText.text.toString(),
+                        mutableListOf()
+                    )
                 )
-            ) }
+            }
             builder.show()
         }
     }
@@ -77,7 +91,6 @@ class MainActivity : AppCompatActivity() {
             .build()
         var mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
-
         val signInIntent = mGoogleSignInClient.signInIntent
         startActivityForResult(signInIntent, 200)
 
@@ -86,7 +99,7 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent();
         if (requestCode == 200) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             try {
@@ -104,32 +117,33 @@ class MainActivity : AppCompatActivity() {
     private fun firebaseAuthWithGoogle(idToken: String) {
         lateinit var auth: FirebaseAuth
         auth = Firebase.auth
-        auth.signInWithCredential(GoogleAuthProvider.getCredential(idToken, null)).addOnCompleteListener(this) { task ->
-            if (task.isSuccessful) {
+        auth.signInWithCredential(GoogleAuthProvider.getCredential(idToken, null))
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
 
-                Log.d(TAG, "signInWithCredential:success")
-                USER_ID = auth.currentUser?.uid.toString()
-                EMAIL = auth.currentUser?.email.toString()
-                DISPLAY_NAME = auth.currentUser?.displayName.toString()
-                binding.loginStatus.text = "Logged in as '$DISPLAY_NAME' \n($EMAIL)"
-                ListDepositoryManager.instance.load(USER_ID, EMAIL, "https://huskis-79721-default-rtdb.europe-west1.firebasedatabase.app/", this)
+                    Log.d(TAG, "Sign In With Credential : Success")
+                    USER_ID = auth.currentUser?.uid.toString()
+                    EMAIL = auth.currentUser?.email.toString()
+                    DISPLAY_NAME = auth.currentUser?.displayName.toString()
+                    binding.loginStatus.text = "Logged in as '$DISPLAY_NAME' \n($EMAIL)"
+                    ListDepositoryManager.instance.load(USER_ID, EMAIL, firebaseURL, this)
 
-            } else {
-                // If sign in fails, display a message to the user.
-                Log.w(TAG, "signInWithCredential:failure", task.exception)
+                } else {
+                    // Sign in failed
+                    Log.w(TAG, "Sign In With Credential : Failure", task.exception)
 
+                }
             }
-        }
     }
 
     private fun addList(item: Todo) {
         ListDepositoryManager.instance.addTodo(item)
 
     }
-
     override fun onResume() {
         super.onResume()
         binding.cardListing.adapter?.notifyDataSetChanged()
+
     }
 
     private fun onListClicked(todo: Todo): Unit {
