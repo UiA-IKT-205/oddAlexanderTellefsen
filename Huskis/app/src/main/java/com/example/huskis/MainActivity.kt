@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.huskis.data.Todo
 import com.example.huskis.databinding.ActivityMainBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
@@ -26,6 +27,9 @@ private var DISPLAY_NAME: String = "Anon"
 private var EMAIL: String = "anonymous@email.com"
 private val TAG: String = "Huskis:MainActivity"
 private val firebaseURL = "https://huskis-79721-default-rtdb.europe-west1.firebasedatabase.app/"
+lateinit var auth: FirebaseAuth
+lateinit var gso:GoogleSignInOptions
+lateinit var mGoogleSignInClient:GoogleSignInClient
 
 class ListHolder {
 
@@ -63,6 +67,11 @@ class MainActivity : AppCompatActivity() {
         //Header list spacing
         binding.cardListing.addItemDecoration(HeaderDecoration(50, 50))
 
+        //Login in button push show option
+        binding.signInCard.setOnClickListener{
+            switchAccount()
+        }
+
         //Floating action button
         binding.fabAdd.setOnClickListener {
             val builder = AlertDialog.Builder(this)
@@ -84,12 +93,22 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun switchAccount() {
+        //Signing out of firebase and google client
+        auth.signOut()
+        mGoogleSignInClient.signOut();
+
+        //Initializin new sign-in
+        signInGoogle()
+
+    }
+
     private fun signInGoogle() {
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
-        var mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
         val signInIntent = mGoogleSignInClient.signInIntent
         startActivityForResult(signInIntent, 200)
@@ -115,7 +134,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun firebaseAuthWithGoogle(idToken: String) {
-        lateinit var auth: FirebaseAuth
         auth = Firebase.auth
         auth.signInWithCredential(GoogleAuthProvider.getCredential(idToken, null))
             .addOnCompleteListener(this) { task ->
