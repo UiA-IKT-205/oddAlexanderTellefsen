@@ -15,4 +15,6 @@
     <string name="inputItemExample">E.g Buy milk</string>
     <string name="editHeaderText">Enter new list name</string>
     <string name="editHeaderHint">E.g Shopping list</string>
+    <string name="noData">No lists to show. Add one!</string>
+    <string name="noItemData">Forgot something?</string>
 </resources>

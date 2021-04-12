@@ -1,29 +1,20 @@
 package com.example.huskis
 
 import android.content.Context
-import android.content.Intent
 import android.util.Log
-import androidx.core.app.ActivityCompat.startActivityForResult
 import com.example.huskis.data.Todo
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.common.api.ApiException
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
-
 private var URL: String = "https://huskis-79721-default-rtdb.europe-west1.firebasedatabase.app/"
 private var USER: String = "Anonymous"
 private var EMAIL: String = "Anonymous@email.com"
 private var DATABASE : String = "FIREBASE DATABASE:"
-class ListDepositoryManager {
 
+class ListDepositoryManager {
 
     private lateinit var listCollection: MutableList<Todo>
     val database = Firebase.database(URL)
@@ -32,14 +23,17 @@ class ListDepositoryManager {
 
 
     fun load(user:String, email:String, url: String, context: Context) {
+
         USER = user
         EMAIL = email
         URL = url
+
         listCollection = mutableListOf()
+        Firebase.database.setPersistenceEnabled(true)
+        myRef.keepSynced(true)
         readFromRealtimeDatabase()
 
     }
-
 
     fun addTodo(todo: Todo) {
         myRef.child(USER).child("List Items").child(todo.title).setValue(todo)
@@ -56,15 +50,7 @@ class ListDepositoryManager {
         //Adding item to local mutableList
         listCollection[listCollection.indexOf(key)].itemList.add(item)
 
-        updateStats()
-    }
 
-    fun deleteItem(listKey: String, itemKey: String) {
-        //Deleting entry from database. Deletion from local mutableList is done in adapter
-        myRef.child(USER).child("List Items").child(listKey).child("itemList")
-            .child(itemKey).removeValue()
-
-        updateStats()
     }
 
     fun deleteTodo(index: Int) {
@@ -73,28 +59,23 @@ class ListDepositoryManager {
 
         //Deleting entry from local mutableList
         listCollection.removeAt(index)
+        onList?.invoke(listCollection)
 
-        updateStats()
-    }
-
-    fun flipStatus(listKey: String, item: Todo.item, status: Boolean) {
-        //Flipping status locally in mutableList
-        item.flipStatus()
-
-        //Flipping status entry on remote database
-        myRef.child(USER).child("List Items").child(listKey).child("itemList")
-            .child(item.itemName).child("completed").setValue(!status)
-
-        updateStats()
 
     }
 
-    fun updateStats(){
+    fun updateDatabase(title: String) {
+        myRef.child(USER).child("List Items").child(title).removeValue()
         for (v in listCollection) {
             myRef.child(USER).child("List Items").child(v.title).child("size").setValue(v.getSize())
             myRef.child(USER).child("List Items").child(v.title).child("completed").setValue(v.getCompleted())
-        }
 
+            for (w in v.itemList) {
+                myRef.child(USER).child("List Items").child(v.title).child("itemList").child(w.itemName).push()
+                myRef.child(USER).child("List Items").child(v.title).child("itemList").child(w.itemName).setValue(w)
+
+                }
+        }
     }
 
     fun readFromRealtimeDatabase() {
@@ -127,6 +108,7 @@ class ListDepositoryManager {
                     }
                 }
                 onList?.invoke(listCollection)
+
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -135,6 +117,8 @@ class ListDepositoryManager {
         }
         )
     }
+
+    fun getListCount(): Int = listCollection.size
 
     companion object {
         val instance = ListDepositoryManager()

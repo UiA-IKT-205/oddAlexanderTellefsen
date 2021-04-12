@@ -21,12 +21,12 @@ class ListRecyclerAdapter(
 
         fun bind(todo: Todo) {
             var position: Int = getAdapterPosition()
-
             binding.tvTittel.text = todo.title
             binding.pbProgress.max = todo.getSize()
             binding.pbProgress.setProgress(todo.getCompleted(), true)
             binding.pbProgress.max = todo.getSize()
             binding.deleteBtn.setOnClickListener { deleteList(position) }
+
         }
     }
 
@@ -49,7 +49,6 @@ class ListRecyclerAdapter(
                 false
             )
         )
-
     }
 
     fun updateCollection(newList: List<Todo>) {
@@ -59,7 +58,6 @@ class ListRecyclerAdapter(
     }
 
     fun deleteList(position: Int) {
-        lateinit var dialog: AlertDialog
         ListDepositoryManager.instance.deleteTodo(position)
         updateCollection(todo)
 

@@ -3,15 +3,14 @@ package com.example.huskis
 import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.EditText
-import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.huskis.data.Todo
 import com.example.huskis.databinding.ActivityDetailsBinding
 import kotlinx.android.synthetic.main.activity_details.*
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.alert_dialog_input.view.*
 
 class DetailsActivity : AppCompatActivity() {
@@ -46,14 +45,14 @@ class DetailsActivity : AppCompatActivity() {
         //Adding adapter
         binding.detailsCardListing.layoutManager = LinearLayoutManager(this)
         binding.detailsCardListing.adapter =
-            DetailRecyclerAdapter(todo.itemList, todo.title, this::updateHeader)
+            DetailRecyclerAdapter(todo.itemList, todo.title, this::updateHeaderAndView)
 
         //Header
         binding.detailsCardListing.addItemDecoration(HeaderDecoration(150, 50))
 
 
         //Updating header on startup (Progressbar)
-        updateHeader()
+        updateHeaderAndView()
 
         //Adding floating action button
         binding.fabItemAdd.setOnClickListener {
@@ -68,6 +67,7 @@ class DetailsActivity : AppCompatActivity() {
             builder.setPositiveButton(getString(R.string.ok)) { dialogInterface: DialogInterface, i: Int ->
                 if (inputText.text.toString() != "")
                     addItem(Todo.item(inputText.text.toString(), false))
+                updateHeaderAndView()
             }
             builder.show()
         }
@@ -80,10 +80,15 @@ class DetailsActivity : AppCompatActivity() {
 
     }
 
-    fun updateHeader() {
+    fun updateHeaderAndView() {
         detailsHeaderTxtId.text = todo.title
         detailsHeaderPb.max = todo.getSize()
         detailsHeaderPb.setProgress(todo.getCompleted(), true)
+
+        if (todo.getSize() == 0)
+            binding.noItemDataText.visibility = (View.VISIBLE)
+        else
+            binding.noItemDataText.visibility = (View.INVISIBLE)
 
     }
 
