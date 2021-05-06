@@ -41,6 +41,8 @@ object GameManager {
             }
         }
 
+
+
     }
 
     fun pollGame(gameId:String){
