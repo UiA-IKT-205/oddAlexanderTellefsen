@@ -3,13 +3,19 @@ package no.uia.ikt205.thgame.dialogs
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
+import no.uia.ikt205.knotsandcrosses.R
+import no.uia.ikt205.knotsandcrosses.databinding.ActivityGameBinding
 import no.uia.ikt205.knotsandcrosses.databinding.DialogCreateGameBinding
-import no.uia.ikt205.knotsandcrosses.databinding.DialogJoinGameBinding
 import java.lang.ClassCastException
 
-class JoinGameDialog() : DialogFragment() {
+class CreateGameDialog() : DialogFragment() {
 
     internal lateinit var listener:GameDialogListener
 
@@ -18,14 +24,13 @@ class JoinGameDialog() : DialogFragment() {
 
             val builder: AlertDialog.Builder = AlertDialog.Builder(it)
             val inflater = requireActivity().layoutInflater
-            val binding = DialogJoinGameBinding.inflate(inflater)
+            val binding = DialogCreateGameBinding.inflate(inflater)
 
             builder.apply {
-                setTitle("Join game")
-                setPositiveButton("Join") { dialog, which ->
-                    if(binding.username.text.toString() != "" && binding.gameId.text.toString() != ""){
-                        listener.onDialogJoinGame(binding.username.text.toString(), binding.gameId.text.toString())
-
+                setTitle("Create game")
+                setPositiveButton("Create") { dialog, which ->
+                    if(binding.username.text.toString() != ""){
+                        listener.onDialogCreateGame(binding.username.text.toString())
                     }
                 }
                 setNegativeButton("Cancel") { dialog, which ->
@@ -44,9 +49,10 @@ class JoinGameDialog() : DialogFragment() {
         super.onAttach(context)
         try {
             listener = context as GameDialogListener
-        } catch (e: ClassCastException){
+        } catch (e:ClassCastException){
             throw ClassCastException(("$context must implement GameDialogListener"))
 
         }
     }
+
 }
