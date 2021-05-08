@@ -49,9 +49,10 @@ object GameService {
 
         val request = object : JsonObjectRequest(Request.Method.POST,url, requestData,
             {
-                val players:MutableList<String> = mutableListOf(it.get("players").toString())
+                print("Object received : "+it)
+                val players = Json.decodeFromString<MutableList<String>>(it.get("players").toString())
                 val gameId:String = it.get("gameId").toString()
-                val state = Json.decodeFromString<List<List<Int>>>(it.get("state").toString())
+                val state = Json.decodeFromString<List<MutableList<Char>>>(it.get("state").toString())
 
                 val game = Game(players, gameId, state)
                 println("Start : ${game}")
@@ -82,9 +83,9 @@ object GameService {
 
         val request = object : JsonObjectRequest(Request.Method.POST,url, requestData,
             {
-                val players:MutableList<String> = mutableListOf(it.get("players").toString())
+                val players = Json.decodeFromString<MutableList<String>>(it.get("players").toString())
                 val gameId:String = it.get("gameId").toString()
-                val state = Json.decodeFromString<List<List<Int>>>(it.get("state").toString())
+                val state = Json.decodeFromString<List<MutableList<Char>>>(it.get("state").toString())
 
                 val game = Game(players, gameId, state)
                 println("Join : ${game}")
@@ -108,24 +109,18 @@ object GameService {
     }
 
     fun updateGame(gameId: String, gameState:GameState, callback: GameServiceCallback){
-        this.gameId = gameId
-        print(this.gameId)
-        val url = APIEndpoints.CREATE_GAME.url
-        println(url)
 
-
+        val url = APIEndpoints.CREATE_GAME.url+"/"+gameId+"/update"
 
         val requestData = JSONObject()
-        //Gson().fromJson(gameState, requestData.javaClass)
-        print("HAHAHA : ${requestData}")
-        //requestData.put("players", gameState)
-        //requestData.put("gameId",gameId)
+        requestData.put("gameId", gameId)
+        requestData.put("state", gameState)
 
         val request = object : JsonObjectRequest(Request.Method.POST,url, requestData,
             {
-                val players:MutableList<String> = mutableListOf(it.get("players").toString())
+                val players = Json.decodeFromString<MutableList<String>>(it.get("players").toString())
                 val gameId:String = it.get("gameId").toString()
-                val state = Json.decodeFromString<List<List<Int>>>(it.get("state").toString())
+                val state = Json.decodeFromString<List<MutableList<Char>>>(gameState.toString())
 
                 val game = Game(players, gameId, state)
 
@@ -147,17 +142,17 @@ object GameService {
     }
 
     fun pollGame(gameId: String,callback:GameServiceCallback){
-        //this.gameId = gameId
+
         val url = APIEndpoints.CREATE_GAME.url+"/"+gameId+"/poll"
         val requestData = JSONObject()
 
         val request = object : JsonObjectRequest(Request.Method.GET,url, requestData,
             {
-                val players:MutableList<String> = mutableListOf(it.get("players").toString())
-                val state = Json.decodeFromString<List<List<Int>>>(it.get("state").toString())
+                val players = Json.decodeFromString<MutableList<String>>(it.get("players").toString())
+                val state = Json.decodeFromString<List<MutableList<Char>>>(it.get("state").toString())
 
                 val game = Game(players, gameId, state)
-                println("POLL : ${game}")
+                println("POLL !! : ${game}")
                 callback(game,null)
             }, {
                 // Error creating new game.
