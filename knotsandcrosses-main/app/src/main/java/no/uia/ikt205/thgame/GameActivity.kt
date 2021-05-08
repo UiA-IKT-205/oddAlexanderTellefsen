@@ -81,17 +81,17 @@ class GameActivity : AppCompatActivity() {
     }
 
     fun loadState(state: GameState) {
-        binding.row0Col0.setText(state[0][0].toString())
-        binding.row0col1.setText(state[0][1].toString())
-        binding.row0col2.setText(state[0][2].toString())
+        binding.row0Col0.setText(convertChar(state[0][0]))
+        binding.row0col1.setText(convertChar(state[0][1]))
+        binding.row0col2.setText(convertChar(state[0][2]))
 
-        binding.row1col0.setText(state[1][0].toString())
-        binding.row1col1.setText(state[1][1].toString())
-        binding.row1col2.setText(state[1][2].toString())
+        binding.row1col0.setText(convertChar(state[1][0]))
+        binding.row1col1.setText(convertChar(state[1][1]))
+        binding.row1col2.setText(convertChar(state[1][2]))
 
-        binding.row2col0.setText(state[2][0].toString())
-        binding.row2col1.setText(state[2][1].toString())
-        binding.row2col2.setText(state[2][2].toString())
+        binding.row2col0.setText(convertChar(state[2][0]))
+        binding.row2col1.setText(convertChar(state[2][1]))
+        binding.row2col2.setText(convertChar(state[2][2]))
 
     }
 
@@ -117,5 +117,12 @@ class GameActivity : AppCompatActivity() {
 
     }
 
+    fun convertChar(c: Char): String {
+        
+        if(c=='0')
+            return " "
+        else
+            return c.toString()
+    }   
 
 }

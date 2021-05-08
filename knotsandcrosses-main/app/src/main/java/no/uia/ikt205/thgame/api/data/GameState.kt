@@ -8,4 +8,3 @@ typealias GameState = List<MutableList<Char>>
 @Parcelize
 data class Game(val players:MutableList<String>, val gameId:String, val state:GameState ):Parcelable
 
-

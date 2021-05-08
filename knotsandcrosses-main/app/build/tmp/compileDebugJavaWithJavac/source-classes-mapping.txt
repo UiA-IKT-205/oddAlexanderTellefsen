@@ -1,7 +1,7 @@
-no/uia/ikt205/knotsandcrosses/BuildConfig.java
- no.uia.ikt205.knotsandcrosses.BuildConfig
 no/uia/ikt205/knotsandcrosses/databinding/DialogJoinGameBinding.java
  no.uia.ikt205.knotsandcrosses.databinding.DialogJoinGameBinding
+no/uia/ikt205/knotsandcrosses/BuildConfig.java
+ no.uia.ikt205.knotsandcrosses.BuildConfig
 no/uia/ikt205/knotsandcrosses/databinding/ActivityMainBinding.java
  no.uia.ikt205.knotsandcrosses.databinding.ActivityMainBinding
 no/uia/ikt205/knotsandcrosses/databinding/ActivityGameBinding.java
