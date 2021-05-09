@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -19,46 +20,59 @@ public final class ActivityGameBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button Row0Col0;
+  public final TextView gameStatusTv;
 
   @NonNull
-  public final Button Row0col1;
+  public final TextView playerOneTv;
 
   @NonNull
-  public final Button Row0col2;
+  public final TextView playerTwoTv;
 
   @NonNull
-  public final Button Row1col0;
+  public final Button row0Col0;
 
   @NonNull
-  public final Button Row1col1;
+  public final Button row0col1;
 
   @NonNull
-  public final Button Row1col2;
+  public final Button row0col2;
 
   @NonNull
-  public final Button Row2col0;
+  public final Button row1col0;
 
   @NonNull
-  public final Button Row2col1;
+  public final Button row1col1;
 
   @NonNull
-  public final Button Row2col2;
+  public final Button row1col2;
 
-  private ActivityGameBinding(@NonNull ConstraintLayout rootView, @NonNull Button Row0Col0,
-      @NonNull Button Row0col1, @NonNull Button Row0col2, @NonNull Button Row1col0,
-      @NonNull Button Row1col1, @NonNull Button Row1col2, @NonNull Button Row2col0,
-      @NonNull Button Row2col1, @NonNull Button Row2col2) {
+  @NonNull
+  public final Button row2col0;
+
+  @NonNull
+  public final Button row2col1;
+
+  @NonNull
+  public final Button row2col2;
+
+  private ActivityGameBinding(@NonNull ConstraintLayout rootView, @NonNull TextView gameStatusTv,
+      @NonNull TextView playerOneTv, @NonNull TextView playerTwoTv, @NonNull Button row0Col0,
+      @NonNull Button row0col1, @NonNull Button row0col2, @NonNull Button row1col0,
+      @NonNull Button row1col1, @NonNull Button row1col2, @NonNull Button row2col0,
+      @NonNull Button row2col1, @NonNull Button row2col2) {
     this.rootView = rootView;
-    this.Row0Col0 = Row0Col0;
-    this.Row0col1 = Row0col1;
-    this.Row0col2 = Row0col2;
-    this.Row1col0 = Row1col0;
-    this.Row1col1 = Row1col1;
-    this.Row1col2 = Row1col2;
-    this.Row2col0 = Row2col0;
-    this.Row2col1 = Row2col1;
-    this.Row2col2 = Row2col2;
+    this.gameStatusTv = gameStatusTv;
+    this.playerOneTv = playerOneTv;
+    this.playerTwoTv = playerTwoTv;
+    this.row0Col0 = row0Col0;
+    this.row0col1 = row0col1;
+    this.row0col2 = row0col2;
+    this.row1col0 = row1col0;
+    this.row1col1 = row1col1;
+    this.row1col2 = row1col2;
+    this.row2col0 = row2col0;
+    this.row2col1 = row2col1;
+    this.row2col2 = row2col2;
   }
 
   @Override
@@ -88,62 +102,81 @@ public final class ActivityGameBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id._row0Col0;
-      Button Row0Col0 = rootView.findViewById(id);
-      if (Row0Col0 == null) {
+      id = R.id.gameStatusTv;
+      TextView gameStatusTv = rootView.findViewById(id);
+      if (gameStatusTv == null) {
         break missingId;
       }
 
-      id = R.id._row0col1;
-      Button Row0col1 = rootView.findViewById(id);
-      if (Row0col1 == null) {
+      id = R.id.playerOneTv;
+      TextView playerOneTv = rootView.findViewById(id);
+      if (playerOneTv == null) {
         break missingId;
       }
 
-      id = R.id._row0col2;
-      Button Row0col2 = rootView.findViewById(id);
-      if (Row0col2 == null) {
+      id = R.id.playerTwoTv;
+      TextView playerTwoTv = rootView.findViewById(id);
+      if (playerTwoTv == null) {
         break missingId;
       }
 
-      id = R.id._row1col0;
-      Button Row1col0 = rootView.findViewById(id);
-      if (Row1col0 == null) {
+      id = R.id.row0Col0;
+      Button row0Col0 = rootView.findViewById(id);
+      if (row0Col0 == null) {
         break missingId;
       }
 
-      id = R.id._row1col1;
-      Button Row1col1 = rootView.findViewById(id);
-      if (Row1col1 == null) {
+      id = R.id.row0col1;
+      Button row0col1 = rootView.findViewById(id);
+      if (row0col1 == null) {
         break missingId;
       }
 
-      id = R.id._row1col2;
-      Button Row1col2 = rootView.findViewById(id);
-      if (Row1col2 == null) {
+      id = R.id.row0col2;
+      Button row0col2 = rootView.findViewById(id);
+      if (row0col2 == null) {
         break missingId;
       }
 
-      id = R.id._row2col0;
-      Button Row2col0 = rootView.findViewById(id);
-      if (Row2col0 == null) {
+      id = R.id.row1col0;
+      Button row1col0 = rootView.findViewById(id);
+      if (row1col0 == null) {
         break missingId;
       }
 
-      id = R.id._row2col1;
-      Button Row2col1 = rootView.findViewById(id);
-      if (Row2col1 == null) {
+      id = R.id.row1col1;
+      Button row1col1 = rootView.findViewById(id);
+      if (row1col1 == null) {
         break missingId;
       }
 
-      id = R.id._row2col2;
-      Button Row2col2 = rootView.findViewById(id);
-      if (Row2col2 == null) {
+      id = R.id.row1col2;
+      Button row1col2 = rootView.findViewById(id);
+      if (row1col2 == null) {
         break missingId;
       }
 
-      return new ActivityGameBinding((ConstraintLayout) rootView, Row0Col0, Row0col1, Row0col2,
-          Row1col0, Row1col1, Row1col2, Row2col0, Row2col1, Row2col2);
+      id = R.id.row2col0;
+      Button row2col0 = rootView.findViewById(id);
+      if (row2col0 == null) {
+        break missingId;
+      }
+
+      id = R.id.row2col1;
+      Button row2col1 = rootView.findViewById(id);
+      if (row2col1 == null) {
+        break missingId;
+      }
+
+      id = R.id.row2col2;
+      Button row2col2 = rootView.findViewById(id);
+      if (row2col2 == null) {
+        break missingId;
+      }
+
+      return new ActivityGameBinding((ConstraintLayout) rootView, gameStatusTv, playerOneTv,
+          playerTwoTv, row0Col0, row0col1, row0col2, row1col0, row1col1, row1col2, row2col0,
+          row2col1, row2col2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -1704,15 +1704,6 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
-id _row0Col0
-id _row0col1
-id _row0col2
-id _row1col0
-id _row1col1
-id _row1col2
-id _row2col0
-id _row2col1
-id _row2col2
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -1871,6 +1862,7 @@ id flip
 id floating
 id forever
 id gameId
+id gameStatusTv
 id ghost_view
 id ghost_view_holder
 id gone
@@ -1990,6 +1982,8 @@ id pathRelative
 id peekHeight
 id percent
 id pin
+id playerOneTv
+id playerTwoTv
 id position
 id postLayout
 id progress_circular
@@ -2003,6 +1997,15 @@ id rightToLeft
 id right_icon
 id right_side
 id rounded
+id row0Col0
+id row0col1
+id row0col2
+id row1col0
+id row1col1
+id row1col2
+id row2col0
+id row2col1
+id row2col2
 id row_index_key
 id save_non_transition_alpha
 id save_overlay_view
@@ -2277,6 +2280,7 @@ layout text_view_without_line_height
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+string Status
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -2380,6 +2384,7 @@ string mtrl_picker_toggle_to_calendar_input_mode
 string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
+string opponentMove
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -2393,6 +2398,10 @@ string start
 string status_bar_notification_info_overflow
 string tre_pa_rad_logo
 string update_game_path
+string waiting_for_player_one
+string waiting_for_player_two
+string xturn
+string yourMove
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow

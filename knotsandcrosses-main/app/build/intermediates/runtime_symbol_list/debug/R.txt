@@ -1703,15 +1703,6 @@ int id SHOW_PROGRESS 0x7f08000a
 int id SYM 0x7f08000b
 int id TOP_END 0x7f08000c
 int id TOP_START 0x7f08000d
-int id _row0Col0 0x7f08000e
-int id _row0col1 0x7f08000f
-int id _row0col2 0x7f080010
-int id _row1col0 0x7f080011
-int id _row1col1 0x7f080012
-int id _row1col2 0x7f080013
-int id _row2col0 0x7f080014
-int id _row2col1 0x7f080015
-int id _row2col2 0x7f080016
 int id accelerate 0x7f080017
 int id accessibility_action_clickable_span 0x7f080018
 int id accessibility_custom_action_0 0x7f080019
@@ -1870,6 +1861,7 @@ int id flip 0x7f0800b1
 int id floating 0x7f0800b2
 int id forever 0x7f0800b3
 int id gameId 0x7f0800b4
+int id gameStatusTv 0x7f0801ad
 int id ghost_view 0x7f0800b5
 int id ghost_view_holder 0x7f0800b6
 int id gone 0x7f0800b7
@@ -1989,6 +1981,8 @@ int id pathRelative 0x7f080128
 int id peekHeight 0x7f080129
 int id percent 0x7f08012a
 int id pin 0x7f08012b
+int id playerOneTv 0x7f0801ae
+int id playerTwoTv 0x7f0801af
 int id position 0x7f08012c
 int id postLayout 0x7f08012d
 int id progress_circular 0x7f08012e
@@ -2002,6 +1996,15 @@ int id rightToLeft 0x7f080135
 int id right_icon 0x7f080136
 int id right_side 0x7f080137
 int id rounded 0x7f080138
+int id row0Col0 0x7f0801b0
+int id row0col1 0x7f0801b1
+int id row0col2 0x7f0801b2
+int id row1col0 0x7f0801b3
+int id row1col1 0x7f0801b4
+int id row1col2 0x7f0801b5
+int id row2col0 0x7f0801b6
+int id row2col1 0x7f0801b7
+int id row2col2 0x7f0801b8
 int id row_index_key 0x7f080139
 int id save_non_transition_alpha 0x7f08013a
 int id save_overlay_view 0x7f08013b
@@ -2276,6 +2279,7 @@ int layout text_view_without_line_height 0x7f0b007a
 int mipmap ic_launcher 0x7f0c0000
 int mipmap ic_launcher_round 0x7f0c0001
 int plurals mtrl_badge_content_description 0x7f0d0000
+int string Status 0x7f0e0074
 int string abc_action_bar_home_description 0x7f0e0000
 int string abc_action_bar_up_description 0x7f0e0001
 int string abc_action_menu_overflow_description 0x7f0e0002
@@ -2379,6 +2383,7 @@ int string mtrl_picker_toggle_to_calendar_input_mode 0x7f0e0063
 int string mtrl_picker_toggle_to_day_selection 0x7f0e0064
 int string mtrl_picker_toggle_to_text_input_mode 0x7f0e0065
 int string mtrl_picker_toggle_to_year_selection 0x7f0e0066
+int string opponentMove 0x7f0e0075
 int string password_toggle_content_description 0x7f0e0067
 int string path_password_eye 0x7f0e0068
 int string path_password_eye_mask_strike_through 0x7f0e0069
@@ -2392,6 +2397,10 @@ int string start 0x7f0e0070
 int string status_bar_notification_info_overflow 0x7f0e0071
 int string tre_pa_rad_logo 0x7f0e0072
 int string update_game_path 0x7f0e0073
+int string waiting_for_player_one 0x7f0e0076
+int string waiting_for_player_two 0x7f0e0077
+int string xturn 0x7f0e0078
+int string yourMove 0x7f0e0079
 int style AlertDialog_AppCompat 0x7f0f0000
 int style AlertDialog_AppCompat_Light 0x7f0f0001
 int style AndroidThemeColorAccentYellow 0x7f0f0002
