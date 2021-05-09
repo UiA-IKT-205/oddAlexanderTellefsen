@@ -45,12 +45,45 @@
     <list default="true" id="7de764f5-25ed-4361-bc30-13cc99042788" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Huskis/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Huskis/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Huskis/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Huskis/.idea/misc.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/8/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/8/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/api/GameService$APIEndpoints.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/api/GameService$APIEndpoints.dex" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/../knotsandcrosses" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/data_binding_base_class_source_out/debug/out/no/uia/ikt205/knotsandcrosses/databinding/ActivityGameBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/data_binding_base_class_source_out/debug/out/no/uia/ikt205/knotsandcrosses/databinding/ActivityGameBinding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/data_binding_layout_info_type_merge/debug/out/activity_game-layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/data_binding_layout_info_type_merge/debug/out/activity_game-layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/5/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/5/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/6/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/6/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/8/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/8/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/9/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/9/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/no/uia/ikt205/knotsandcrosses/databinding/ActivityGameBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/no/uia/ikt205/knotsandcrosses/databinding/ActivityGameBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/no/uia/ikt205/knotsandcrosses/databinding/ActivityMainBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/no/uia/ikt205/knotsandcrosses/databinding/ActivityMainBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/no/uia/ikt205/knotsandcrosses/databinding/DialogJoinGameBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/no/uia/ikt205/knotsandcrosses/databinding/DialogJoinGameBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_java_res/debug/out.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_java_res/debug/out.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/070b72b4893af657250ae07cf421ae68a7aa6b160f13b751687e469bea6750f7_0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/070b72b4893af657250ae07cf421ae68a7aa6b160f13b751687e469bea6750f7_1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/070b72b4893af657250ae07cf421ae68a7aa6b160f13b751687e469bea6750f7_2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/070b72b4893af657250ae07cf421ae68a7aa6b160f13b751687e469bea6750f7_3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/070b72b4893af657250ae07cf421ae68a7aa6b160f13b751687e469bea6750f7_4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/070b72b4893af657250ae07cf421ae68a7aa6b160f13b751687e469bea6750f7_5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/GameActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/GameActivity.dex" afterDir="false" />
+>>>>>>> main
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/api/GameService$createGame$request$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/api/GameService$createGame$request$1.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/api/GameService$createGame$request$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/api/GameService$createGame$request$2.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/api/GameService$createGame$request$3.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/api/GameService$createGame$request$3.dex" afterDir="false" />
@@ -64,6 +97,24 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/api/GameService$updateGame$request$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/api/GameService$updateGame$request$2.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/api/GameService$updateGame$request$3.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/api/GameService$updateGame$request$3.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/api/GameService.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/api/GameService.dex" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/api/data/Game$Creator.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/api/data/Game$Creator.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/api/data/Game.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/api/data/Game.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/api/data/GameStateKt.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/api/data/GameStateKt.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/databinding/ActivityGameBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/databinding/ActivityGameBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/databinding/ActivityMainBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/databinding/ActivityMainBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/databinding/DialogJoinGameBinding.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/knotsandcrosses/databinding/DialogJoinGameBinding.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/thgame/GameManager$createGame$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/thgame/GameManager$createGame$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/thgame/GameManager$joinGame$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/thgame/GameManager$joinGame$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/thgame/GameManager$pollGame$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/thgame/GameManager$pollGame$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/thgame/GameManager$updateGame$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/thgame/GameManager$updateGame$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/thgame/GameManager.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/no/uia/ikt205/thgame/GameManager.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_game.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_game.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/debug/stableIds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/debug/stableIds.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" afterDir="false" />
+>>>>>>> main
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/build-history.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab.values.at" afterDir="false" />
@@ -72,11 +123,28 @@
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/package-parts.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/package-parts.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/package-parts.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/package-parts.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/java-sources-proto-map.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/package-parts.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/package-parts.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/package-parts.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/package-parts.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/package-parts.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/package-parts.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab_i" afterDir="false" />
+>>>>>>> main
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab" afterDir="false" />
@@ -100,6 +168,7 @@
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/last-build.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$APIEndpoints.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$APIEndpoints.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$createGame$request$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$createGame$request$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$createGame$request$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$createGame$request$2.class" afterDir="false" />
@@ -107,6 +176,12 @@
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$joinGame$request$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$joinGame$request$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$joinGame$request$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$joinGame$request$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$joinGame$request$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$joinGame$request$3.class" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/META-INF/app_debug.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/META-INF/app_debug.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/GameActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/GameActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$createGame$request$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$createGame$request$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$joinGame$request$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$joinGame$request$2.class" afterDir="false" />
+>>>>>>> main
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$pollGame$request$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$pollGame$request$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$pollGame$request$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$pollGame$request$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$pollGame$request$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$pollGame$request$3.class" afterDir="false" />
@@ -114,6 +189,17 @@
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$updateGame$request$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$updateGame$request$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$updateGame$request$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService$updateGame$request$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/GameService.class" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/data/Game$Creator.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/data/Game$Creator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/data/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/data/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/data/GameStateKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/knotsandcrosses/api/data/GameStateKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/thgame/GameManager$createGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/thgame/GameManager$createGame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/thgame/GameManager$joinGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/thgame/GameManager$joinGame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/thgame/GameManager$pollGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/thgame/GameManager$pollGame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/thgame/GameManager$updateGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/thgame/GameManager$updateGame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/thgame/GameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/no/uia/ikt205/thgame/GameManager.class" afterDir="false" />
+>>>>>>> main
       <change beforePath="$PROJECT_DIR$/app/src/main/java/no/uia/ikt205/thgame/GameActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/no/uia/ikt205/thgame/GameActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/no/uia/ikt205/thgame/GameManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/no/uia/ikt205/thgame/GameManager.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/no/uia/ikt205/thgame/api/GameService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/no/uia/ikt205/thgame/api/GameService.kt" afterDir="false" />
@@ -143,10 +229,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="VirtualDevicePath@/home/oddalex/.android/avd/Pixel_3a_API_30_2.avd" />
+<<<<<<< HEAD
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-05-09T00:08:08.109866Z" />
+=======
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-05-08T23:07:01.878559Z" />
+>>>>>>> main
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SelectDeploymentTargetsDialog.selectedDevices" value="VirtualDevicePath@/home/oddalex/.android/avd/Pixel_3a_API_30.avd" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Huskis" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -373,17 +464,23 @@
       <screen x="0" y="28" width="3440" height="1412" />
     </state>
     <state x="531" y="339" width="638" height="787" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.28.3440.1412@0.28.3440.1412" timestamp="1620325876641" />
-    <state x="672" y="527" width="356" height="411" key="AndroidCreateXmlResourceDialog" timestamp="1620325079723">
-      <screen x="0" y="28" width="3440" height="1412" />
+    <state x="100" y="100" width="1510" height="1207" key="AVDManager" timestamp="1620429432759">
+      <screen x="0" y="0" width="3440" height="1407" />
     </state>
+    <state x="100" y="100" width="1510" height="1207" key="AVDManager/0.0.3440.1407@0.0.3440.1407" timestamp="1620429432759" />
+    <state x="672" y="497" width="358" height="394" key="AndroidCreateXmlResourceDialog" timestamp="1620516653949">
+      <screen x="0" y="0" width="3440" height="1407" />
+    </state>
+    <state x="672" y="497" width="358" height="394" key="AndroidCreateXmlResourceDialog/0.0.3440.1407@0.0.3440.1407" timestamp="1620516653949" />
     <state x="672" y="527" width="356" height="411" key="AndroidCreateXmlResourceDialog/0.28.3440.1412@0.28.3440.1412" timestamp="1620325079723" />
     <state x="608" y="447" width="498" height="511" key="AndroidProcessChooserDialog" timestamp="1620084464834">
       <screen x="0" y="0" width="3440" height="1407" />
     </state>
     <state x="608" y="447" width="498" height="511" key="AndroidProcessChooserDialog/0.0.3440.1407@0.0.3440.1407" timestamp="1620084464834" />
-    <state x="640" y="460" width="424" height="482" key="FileChooserDialogImpl" timestamp="1620077630040">
+    <state x="640" y="460" width="424" height="482" key="FileChooserDialogImpl" timestamp="1620408160885">
       <screen x="0" y="0" width="3440" height="1407" />
     </state>
+<<<<<<< HEAD
     <state x="640" y="460" width="424" height="482" key="FileChooserDialogImpl/0.0.3440.1407@0.0.3440.1407" timestamp="1620077630040" />
     <state width="1630" height="391" key="GridCell.Tab.0.bottom" timestamp="1620518894674">
       <screen x="0" y="0" width="3440" height="1407" />
@@ -404,6 +501,28 @@
       <screen x="0" y="0" width="3440" height="1407" />
     </state>
     <state width="1630" height="391" key="GridCell.Tab.0.right/0.0.3440.1407@0.0.3440.1407" timestamp="1620518894674" />
+=======
+    <state x="640" y="460" width="424" height="482" key="FileChooserDialogImpl/0.0.3440.1407@0.0.3440.1407" timestamp="1620408160885" />
+    <state width="1640" height="391" key="GridCell.Tab.0.bottom" timestamp="1620515229766">
+      <screen x="0" y="0" width="3440" height="1407" />
+    </state>
+    <state width="1640" height="391" key="GridCell.Tab.0.bottom/0.0.3440.1407@0.0.3440.1407" timestamp="1620515229766" />
+    <state width="1670" height="395" key="GridCell.Tab.0.bottom/0.28.3440.1412@0.28.3440.1412" timestamp="1620330968043" />
+    <state width="1640" height="391" key="GridCell.Tab.0.center" timestamp="1620515229766">
+      <screen x="0" y="0" width="3440" height="1407" />
+    </state>
+    <state width="1640" height="391" key="GridCell.Tab.0.center/0.0.3440.1407@0.0.3440.1407" timestamp="1620515229766" />
+    <state width="1670" height="395" key="GridCell.Tab.0.center/0.28.3440.1412@0.28.3440.1412" timestamp="1620330968042" />
+    <state width="1640" height="391" key="GridCell.Tab.0.left" timestamp="1620515229766">
+      <screen x="0" y="0" width="3440" height="1407" />
+    </state>
+    <state width="1640" height="391" key="GridCell.Tab.0.left/0.0.3440.1407@0.0.3440.1407" timestamp="1620515229766" />
+    <state width="1670" height="395" key="GridCell.Tab.0.left/0.28.3440.1412@0.28.3440.1412" timestamp="1620330968042" />
+    <state width="1640" height="391" key="GridCell.Tab.0.right" timestamp="1620515229766">
+      <screen x="0" y="0" width="3440" height="1407" />
+    </state>
+    <state width="1640" height="391" key="GridCell.Tab.0.right/0.0.3440.1407@0.0.3440.1407" timestamp="1620515229766" />
+>>>>>>> main
     <state width="1670" height="395" key="GridCell.Tab.0.right/0.28.3440.1412@0.28.3440.1412" timestamp="1620330968042" />
     <state width="1590" height="394" key="GridCell.Tab.1.bottom" timestamp="1620078756462">
       <screen x="0" y="0" width="3440" height="1407" />
@@ -421,5 +540,13 @@
       <screen x="0" y="0" width="3440" height="1407" />
     </state>
     <state width="1590" height="394" key="GridCell.Tab.1.right/0.0.3440.1407@0.0.3440.1407" timestamp="1620078756462" />
+    <state x="560" y="513" width="580" height="379" key="com.android.tools.idea.run.deployment.SelectMultipleDevicesDialog" timestamp="1620429119504">
+      <screen x="0" y="0" width="3440" height="1407" />
+    </state>
+    <state x="560" y="513" width="580" height="379" key="com.android.tools.idea.run.deployment.SelectMultipleDevicesDialog/0.0.3440.1407@0.0.3440.1407" timestamp="1620429119504" />
+    <state x="518" y="320" width="672" height="678" key="search.everywhere.popup" timestamp="1620424963710">
+      <screen x="0" y="0" width="3440" height="1407" />
+    </state>
+    <state x="518" y="320" width="672" height="678" key="search.everywhere.popup/0.0.3440.1407@0.0.3440.1407" timestamp="1620424963710" />
   </component>
 </project>

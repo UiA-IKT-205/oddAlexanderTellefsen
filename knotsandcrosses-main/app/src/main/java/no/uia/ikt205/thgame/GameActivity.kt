@@ -118,11 +118,11 @@ class GameActivity : AppCompatActivity() {
     }
 
     fun convertChar(c: Char): String {
-
+        
         if(c=='0')
             return " "
         else
             return c.toString()
-    }
+    }   
 
 }
