@@ -14,8 +14,6 @@ import org.json.JSONObject
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
-
-
 typealias GameServiceCallback = (state:Game?, errorCode:Int? ) -> Unit
 
 object GameService {
