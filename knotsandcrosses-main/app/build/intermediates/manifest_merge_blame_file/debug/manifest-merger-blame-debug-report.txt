@@ -34,27 +34,28 @@
 22-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:13:9-54
 23        android:supportsRtl="true"
 23-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:14:9-35
-24        android:theme="@style/Theme.ThGame"
-24-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:15:9-44
-25        android:usesCleartextTraffic="true" >
-25-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:16:9-44
-26        <activity android:name="no.uia.ikt205.knotsandcrosses.GameActivity" />
-26-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:17:9-59
-26-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:17:19-47
-27        <activity android:name="no.uia.ikt205.knotsandcrosses.MainActivity" >
-27-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:18:9-24:20
-27-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:18:19-47
-28            <intent-filter>
-28-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:19:13-23:29
-29                <action android:name="android.intent.action.MAIN" />
-29-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:20:17-69
-29-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:20:25-66
-30
-31                <category android:name="android.intent.category.LAUNCHER" />
-31-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:22:17-77
-31-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:22:27-74
-32            </intent-filter>
-33        </activity>
-34    </application>
-35
-36</manifest>
+24        android:testOnly="true"
+25        android:theme="@style/Theme.ThGame"
+25-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:15:9-44
+26        android:usesCleartextTraffic="true" >
+26-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:16:9-44
+27        <activity android:name="no.uia.ikt205.knotsandcrosses.GameActivity" />
+27-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:17:9-59
+27-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:17:19-47
+28        <activity android:name="no.uia.ikt205.knotsandcrosses.MainActivity" >
+28-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:18:9-24:20
+28-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:18:19-47
+29            <intent-filter>
+29-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:19:13-23:29
+30                <action android:name="android.intent.action.MAIN" />
+30-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:20:17-69
+30-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:20:25-66
+31
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:22:17-77
+32-->/home/oddalex/ikt205g21v/oddAlexanderTellefsen/knotsandcrosses-main/app/src/main/AndroidManifest.xml:22:27-74
+33            </intent-filter>
+34        </activity>
+35    </application>
+36
+37</manifest>

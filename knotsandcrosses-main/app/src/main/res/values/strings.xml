@@ -29,4 +29,6 @@
     <string name="xturn">X\'s turn</string>
     <string name="yourMove">Your move</string>
     <string name="opponentMove">Wait for opponent to make move</string>
+    <string name="victory">Victory!</string>
+    <string name="gameIdStatus">"Game ID : "</string>
 </resources>

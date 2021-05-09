@@ -20,6 +20,9 @@ public final class ActivityGameBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final TextView gameIdTv;
+
+  @NonNull
   public final TextView gameStatusTv;
 
   @NonNull
@@ -55,12 +58,13 @@ public final class ActivityGameBinding implements ViewBinding {
   @NonNull
   public final Button row2col2;
 
-  private ActivityGameBinding(@NonNull ConstraintLayout rootView, @NonNull TextView gameStatusTv,
-      @NonNull TextView playerOneTv, @NonNull TextView playerTwoTv, @NonNull Button row0Col0,
-      @NonNull Button row0col1, @NonNull Button row0col2, @NonNull Button row1col0,
-      @NonNull Button row1col1, @NonNull Button row1col2, @NonNull Button row2col0,
-      @NonNull Button row2col1, @NonNull Button row2col2) {
+  private ActivityGameBinding(@NonNull ConstraintLayout rootView, @NonNull TextView gameIdTv,
+      @NonNull TextView gameStatusTv, @NonNull TextView playerOneTv, @NonNull TextView playerTwoTv,
+      @NonNull Button row0Col0, @NonNull Button row0col1, @NonNull Button row0col2,
+      @NonNull Button row1col0, @NonNull Button row1col1, @NonNull Button row1col2,
+      @NonNull Button row2col0, @NonNull Button row2col1, @NonNull Button row2col2) {
     this.rootView = rootView;
+    this.gameIdTv = gameIdTv;
     this.gameStatusTv = gameStatusTv;
     this.playerOneTv = playerOneTv;
     this.playerTwoTv = playerTwoTv;
@@ -102,6 +106,12 @@ public final class ActivityGameBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.gameIdTv;
+      TextView gameIdTv = rootView.findViewById(id);
+      if (gameIdTv == null) {
+        break missingId;
+      }
+
       id = R.id.gameStatusTv;
       TextView gameStatusTv = rootView.findViewById(id);
       if (gameStatusTv == null) {
@@ -174,9 +184,9 @@ public final class ActivityGameBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityGameBinding((ConstraintLayout) rootView, gameStatusTv, playerOneTv,
-          playerTwoTv, row0Col0, row0col1, row0col2, row1col0, row1col1, row1col2, row2col0,
-          row2col1, row2col2);
+      return new ActivityGameBinding((ConstraintLayout) rootView, gameIdTv, gameStatusTv,
+          playerOneTv, playerTwoTv, row0Col0, row0col1, row0col2, row1col0, row1col1, row1col2,
+          row2col0, row2col1, row2col2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

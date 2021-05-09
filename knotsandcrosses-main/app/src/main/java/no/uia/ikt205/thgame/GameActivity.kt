@@ -26,7 +26,9 @@ class GameActivity : AppCompatActivity() {
         game?.let { loadState(it.state) }
         game?.let { loadPlayers(it) }
         setButtonListeners(game)
-
+        val gameIdText:String = getString(R.string.gameIdStatus) + game?.gameId.toString()
+        binding.gameIdTv.setText(gameIdText)
+        
         val mainHandler = Handler(Looper.getMainLooper())
 
         //Poll game, and update if changed
@@ -47,6 +49,8 @@ class GameActivity : AppCompatActivity() {
                         setButtonListeners(game)
                         binding.gameStatusTv.setText(getString(R.string.yourMove))
                         turn = true
+                        game?.let { checkVictory(it.state) }
+
                     }
 
                 }
@@ -78,6 +82,7 @@ class GameActivity : AppCompatActivity() {
 
         }
         game?.let { loadState(it.state) }
+        game?.let { checkVictory(it.state) }
     }
 
     fun loadState(state: GameState) {
@@ -113,8 +118,32 @@ class GameActivity : AppCompatActivity() {
     }
 
     fun checkVictory(state: GameState) {
+        //Horizontal check
+        if(state[0][0] ==state[0][1] && state[0][1] == state[0][2] && state[0][0]!='0')
+            setVictory()
+        else if(state[1][0]==state[1][1] && state[1][1]==state[1][2] && state[1][0]!='0')
+            setVictory()
+        else if(state[2][0]==state[2][1] && state[2][1]==state[2][2] && state[2][0]!='0')
+            setVictory()
+        //Vertical check
+        else if(state[0][0]==state[1][0] && state[1][0]==state[2][0] && state[0][0]!='0')
+            setVictory()
+        else if(state[0][1]==state[1][1] && state[1][1]==state[2][1] && state[0][1]!='0')
+            setVictory()
+        else if(state[0][2]==state[1][2] && state[1][2]==state[2][2] && state[0][2]!='0')
+            setVictory()
+        //Diagonal check
+        else if(state[0][0]==state[1][1] && state[1][1]==state[2][2] && state[0][0]!='0')
+            setVictory()
+        else if(state[0][2]==state[1][1] && state[1][1]==state[0][2] && state[0][2]!='0')
+            setVictory()
 
 
+    }
+
+    private fun setVictory() {
+        turn=false
+        binding.gameStatusTv.setText(getString(R.string.victory))
     }
 
     fun convertChar(c: Char): String {
