@@ -164,4 +164,19 @@
 
     </LinearLayout>
 
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/gameIdTv"
+        android:text=""
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:gravity="end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingBottom="50dp"
+        android:paddingTop="30dp"
+        android:paddingRight="10dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
